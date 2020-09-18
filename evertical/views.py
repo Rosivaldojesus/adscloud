@@ -7,3 +7,7 @@ def index(request):
 
 def clientes(request):
     return render(request, 'clientes.html')
+
+
+def base(request):
+    return render(request, 'base,html')
