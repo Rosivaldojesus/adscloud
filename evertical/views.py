@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import tbCliente
 
 
 # Create your views here.
@@ -6,7 +7,9 @@ def index(request):
     return render(request, 'index.html')
 
 def clientes(request):
-    return render(request, 'clientes.html')
+    clientes = tbCliente.objects.all()
+    dados = {'clientes': clientes}
+    return render(request, 'clientes.html', dados)
 
 
 def base(request):

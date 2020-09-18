@@ -4,15 +4,17 @@
 	<thead>
 		<tr>
 			<td>Nome</td>
-			<td>Cidade</td>
+			<td>Gerência(a)</td>
 			<td>Estado</td>
 		</tr>
 	</thead>
 	<tbody>
+		{% for cliente in clientes %}
 		<tr>
-			<th></th>
-			<th></th>
+			<th>{{ cliente.clienteNome }}</th>
+			<th>{{ cliente.clienteAdminristrador }}</th>
 			<th></th>
 		</tr>
+		{% endfor %}
 	</tbody>
 </table>
