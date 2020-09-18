@@ -16,5 +16,5 @@ def model_header(request):
     return render(request, 'model-header.html')
 
 def model_footer(request):
-    return render(request, 'model-footer.html'):
+    return render(request, 'model-footer.html')
     
