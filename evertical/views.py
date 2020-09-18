@@ -10,7 +10,7 @@ def clientes(request):
 
 
 def base(request):
-    return render(request, 'base,html')
+    return render(request, 'base.html')
 
 def model_header(request):
     return render(request, 'model-header.html')
