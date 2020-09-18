@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import tbCliente, tbCidade, tbAdministradora, tbSistemaCftv, tbSistemaSai, tbSistemaSca, \
-    tbSistemaSap, tbSistemaSdai, tbPreventivas, tbSenhasPadores, tbEquipamento, tbWework
+    tbSistemaSap, tbSistemaSdai, tbPreventivas, tbSenhasPadores, tbEquipamento, tbWework, tbSistemas
 
 # Register your models here.
 
@@ -16,3 +16,4 @@ admin.site.register(tbPreventivas)
 admin.site.register(tbSenhasPadores)
 admin.site.register(tbEquipamento)
 admin.site.register(tbWework)
+admin.site.register(tbSistemas)
