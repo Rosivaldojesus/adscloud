@@ -1,10 +1,21 @@
 from django.db import models
 
 # Create your models here.
+class tbSistemaCftv(models.Model):
+    sistemaCftvNome = models.CharField(max_length=50, blank=True, null=True)
+
+    class Meta:
+        db_table = 'tbSistemaCftv'
+        verbose_name_plural = 'Sistema de CFTV'
+
+    def __str__(self):
+        return self.sistemaCftvNome
+
+
 class tbCliente(models.Model):
     clienteNome = models.CharField(max_length=50, blank=True, null=True)
     clienteAdministrador = models.CharField(max_length=20, blank=True, null=True)
-    dataCriacao = models.DateTimeField(auto_now_add=True)
+    clienteCftv = models.ForeignKey(tbSistemaCftv, on_delete=models.CASCADE)
 
     class Meta:
         db_table = 'tbCliente'
@@ -17,7 +28,7 @@ class tbCliente(models.Model):
 class tbCidade(models.Model):
     cidadeNome = models.CharField(max_length=50, blank=True, null=True)
     cidadeEstado = models.CharField(max_length=50, blank=True, null=True)
-    dataCriacao = models.DateTimeField(auto_now_add=True)
+
 
     class Meta:
         db_table = 'tbCidade'
@@ -49,15 +60,7 @@ class tbAdministradora(models.Model):
         return self.administradoraNome
 
 
-class tbSistemaCftv(models.Model):
-    sistemaCftvNome = models.CharField(max_length=50, blank=True, null=True)
 
-    class Meta:
-        db_table = 'tbSistemaCftv'
-        verbose_name_plural = 'Sistema de CFTV'
-
-    def __str__(self):
-        return self.sistemaCftvNome
 
 
 class tbSistemaSai(models.Model):
@@ -109,7 +112,7 @@ class tbEquipamento(models.Model):
     equipamentoPassword = models.CharField(max_length=50, blank=True, null=True)
     equipamentoQrCode = models.CharField(max_length=50, blank=True, null=True)
     equipamentoObservacao = models.CharField(max_length=255, blank=True, null=True)
-    dataCriacao = models.DateTimeField(auto_now_add=True)
+
 
     class Meta:
         db_table = 'tbEquipamento'
@@ -122,7 +125,7 @@ class tbPreventivas(models.Model):
     preventivaEquipamento = models.CharField(max_length=100, blank=True, null=True)
     preventivaProcedimento = models.CharField(max_length=255, blank=True, null=True)
     preventivaTempo = models.IntegerField(blank=True, null=True)
-    dataCriacao = models.DateTimeField(auto_now_add=True)
+
 
     class Meta:
         db_table = 'tbPreventivas'
@@ -135,7 +138,7 @@ class tbSenhasPadores(models.Model):
     senhaLogin = models.CharField(max_length=50, blank=True, null=True)
     senhaPassword = models.CharField(max_length=50, blank=True, null=True)
     senhaObservacao = models.CharField(max_length=255, blank=True, null=True)
-    dataCriacao = models.DateTimeField(auto_now_add=True)
+
 
     class Meta:
         db_table = 'tbSenhasPadores'
@@ -149,7 +152,7 @@ class tbWework(models.Model):
     weworkNome = models.CharField(max_length=50, blank=True, null=True)
     weworkQuantAndares = models.IntegerField(blank=True, null=True)
     weworkAndares = models.CharField(max_length=50, blank=True, null=True)
-    dataCriacao = models.DateTimeField(auto_now_add=True)
+
 
     class Meta:
         db_table = 'tbWework'
