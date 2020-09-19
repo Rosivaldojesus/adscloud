@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+	<section>
+
+<h1>Lista de Equipamentos do Cliente</h1>
+		<table>
+			<thead>
+				<tr>
+					<th>Cliente</th>
+					<th>Sistema</th>
+					<th>Login</th>
+					<th>Senha</th>
+					<th>QrCode</th>
+
+
+				</tr>
+			</thead>
+			<tbody>
+			{% for equipamento in equipamento %}
+				<tr>
+					<td>{{ equipamento.equipamento }}</td>
+					<td>{{ equipamento.equipamentoSistema }}</td>
+					<td>{{ equipamento.equipamentoLogin }}</td>
+					<td>{{ equipamento.equipamentoPassword }}</td>
+					<td>{{ equipamento.equipamentoQrCode }}</td>
+				</tr>
+			{% endfor %}
+			</tbody>
+		</table>
+
+
+
+
+
+
+
+	</section>
+</div>
+{% endblock %}

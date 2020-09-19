@@ -9,8 +9,9 @@
 			<tr>
 				<td>Nome</td>
 				<td>Gerência(a)</td>
-				<td>Estado</td>
+				<td></td>
 				<td>Opções</td>
+				<td>Mais</td>
 			</tr>
 		</thead>
 		<tbody>
@@ -19,7 +20,8 @@
 				<th>{{ cliente.clienteNome }}</th>
 				<th>{{ cliente.clienteAdministrador }}</th>
 				<th></th>
-				<th><a href="/clientesInformacoes/?id={{ cliente.id }}">Informações</th>
+				<th><a href="/clientesInformacoes/?id={{ cliente.id }}"> Informações </th>
+				<th><a href="/clienteEquipamentos/?id={{ cliente.id }}"> Equipamentos </th>
 			</tr>
 			{% endfor %}
 		</tbody>

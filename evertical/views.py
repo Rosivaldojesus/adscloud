@@ -1,5 +1,9 @@
 from django.shortcuts import render
-from .models import tbCliente
+from .models import tbCliente, tbEquipamento
+from django.http import HttpResponse
+from django.shortcuts import render, redirect, get_object_or_404
+
+
 
 
 # Create your views here.
@@ -17,6 +21,14 @@ def clientesInformacoes(request):
     if cliente:
         dados['cliente'] = tbCliente.objects.get(id=cliente)
     return render(request, 'clientesInformacoes.html', dados)
+
+def clienteEquipamentos(request):
+        equipamento = request.GET.get('id')
+        dados = {}
+        if equipamento:
+            dados['equipamento'] = tbEquipamento.objects.filter(equipamentoCliente=equipamento)
+        return render(request, 'clienteEquipamentos.html', dados)
+
 
 
 def base(request):
