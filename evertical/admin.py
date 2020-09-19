@@ -4,7 +4,8 @@ from .models import tbCliente, tbCidade, tbAdministradora, tbSistemaCftv, tbSist
     tbFabricante, tbManuais, tbArtigos
 
 # Register your models here.
-
+class tbClienteAdmin(admin.ModelAdmin):
+    list_display = ('id')
 
 admin.site.register(tbCliente)
 
