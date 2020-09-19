@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+	<section>
+
+		<h4>Cliente: {{ cliente.clienteNome }}</h4>
+		<h4>Administrador: {{ cliente.clienteAdministrador }}</h4>
+		<h4>Administradora: {{ cliente.clienteAdministradora }}</h4>
+		<h4>CFTV: {{ cliente.clienteCftv }}</h4>
+		<h4>SAI: {{ cliente.clienteSai }}</h4>
+		<h4>SCA: {{ cliente.clienteSca }}</h4>
+		<h4>SAP: {{ cliente.clienteSap }}</h4>
+		<h4>SDAI: {{ cliente.clienteSdai }}</h4>
+		<h4>Anotações: {{ cliente.clienteObservacao }}</h4>
+	</section>
+</div>
+{% endblock %}
