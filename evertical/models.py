@@ -70,7 +70,12 @@ class tbCliente(models.Model):
     clienteNome = models.CharField(max_length=50, blank=True, null=True)
     clienteAdministrador = models.CharField(max_length=20, blank=True, null=True)
     clienteAdministradora = models.CharField(max_length=20, blank=True, null=True)
-
+    clienteCftv = models.ForeignKey(tbSistemaCftv, on_delete=models.CASCADE)
+    clienteSai = models.ForeignKey(tbSistemaSai, on_delete=models.CASCADE)
+    clienteSca = models.ForeignKey(tbSistemaSca, on_delete=models.CASCADE)
+    clienteSap = models.ForeignKey(tbSistemaSap, on_delete=models.CASCADE)
+    clienteSdai = models.ForeignKey(tbSistemaSdai, on_delete=models.CASCADE)
+    clienteCidade = models.ForeignKey(tbCidade, on_delete=models.CASCADE)
 
 
 
@@ -135,6 +140,7 @@ class tbSenhasPadroes(models.Model):
     senhaLogin = models.CharField(max_length=50, blank=True, null=True)
     senhaPassword = models.CharField(max_length=50, blank=True, null=True)
     senhaObservacao = models.CharField(max_length=255, blank=True, null=True)
+
 
 
     class Meta:
