@@ -1,84 +1,113 @@
 from django.db import models
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 class tbAdministradora(models.Model):
-    administradoraNome = models.CharField(max_length=50, blank=50, null=True)
+    administradora = models.CharField(max_length=50, blank=50, null=True)
     class Meta:
         db_table = 'tbAdministradora'
         verbose_name_plural = 'Administradora'
     def __str__(self):
-        return self.administradoraNome
+        return self.administradora
 
 
 class tbSistemaCftv(models.Model):
-    sistemaCftvNome = models.CharField(max_length=50, blank=True, null=True)
+    sistemaCftv = models.CharField(max_length=50, blank=True, null=True)
     class Meta:
         db_table = 'tbSistemaCftv'
         verbose_name_plural = 'Sistema de CFTV'
     def __str__(self):
-        return self.sistemaCftvNome
+        return self.sistemaCftv
 
 
 class tbSistemaSai(models.Model):
-    sistemaSaiNome = models.CharField(max_length=50, blank=True, null=True)
+    sistemaSai = models.CharField(max_length=50, blank=True, null=True)
     class Meta:
         db_table = 'tbSistemaSai'
         verbose_name_plural = 'Sistema de SAI'
     def __str__(self):
-        return self.sistemaSaiNome
+        return self.sistemaSai
 
 
 class tbSistemaSca(models.Model):
-    sistemaScaNome = models.CharField(max_length=50, blank=True, null=True)
+    sistemaSca = models.CharField(max_length=50, blank=True, null=True)
     class Meta:
         db_table = 'tbSistemaSca'
         verbose_name_plural = 'Sistema de SCA'
     def __str__(self):
-        return self.sistemaScaNome
+        return self.sistemaSca
 
 
 class tbSistemaSap(models.Model):
-    sistemaSapNome = models.CharField(max_length=50, blank=True, null=True)
+    sistemaSap= models.CharField(max_length=50, blank=True, null=True)
     class Meta:
         db_table = 'tbSistemaSap'
         verbose_name_plural = 'Sistema de SAP'
     def __str__(self):
-        return self.sistemaSapNome
+        return self.sistemaSap
 
 
 class tbSistemaSdai(models.Model):
-    sistemaSdaiNome = models.CharField(max_length=50, blank=True, null=True)
+    sistemaSdai = models.CharField(max_length=50, blank=True, null=True)
     class Meta:
         db_table = 'tbSistemaSdai'
         verbose_name_plural = 'Sistema de SDAI'
     def __str__(self):
-        return self.sistemaSdaiNome
+        return self.sistemaSdai
+
+class tbFabricante(models.Model):
+    sistemaFabricante = models.CharField(max_length=50, blank=True, null=True)
+    class Meta:
+        db_table = 'tbFabricante'
+        verbose_name_plural = 'Sistema Fabricante'
+    def __str__(self):
+        return self.sistemaFabricante
+
+
+
 
 
 class tbCidade(models.Model):
-    cidadeNome = models.CharField(max_length=50, blank=True, null=True)
+    cidade = models.CharField(max_length=50, blank=True, null=True)
     cidadeEstado = models.CharField(max_length=50, blank=True, null=True)
     class Meta:
         db_table = 'tbCidade'
         verbose_name_plural = 'Cidade'
     def __str__(self):
-        return self.cidadeNome
+        return self.cidade
 
+
+class tbSistemas(models.Model):
+    sistemasTipo = models.CharField(max_length=20, blank=True, null=True)
+    class Meta:
+        db_table = 'tbSistemas'
+        verbose_name_plural = 'Sistemas'
+    def __str__(self):
+        return self.sistemasTipo
+
+
+class tbArtigos(models.Model):
+    artigoTitulo = models.CharField(max_length=255, blank=True, null=True)
+    artigoSubtitulo = models.CharField(max_length=255, blank=True, null=True)
+    artigoTexto = models.CharField(max_length=255, blank=True, null=True)
+    class Meta:
+        db_table = 'tbArtigos'
+        verbose_name_plural = 'Artigos'
+    def __str__(self):
+        return self.artigoTitulo
 
 
 class tbCliente(models.Model):
     clienteNome = models.CharField(max_length=50, blank=True, null=True)
     clienteAdministrador = models.CharField(max_length=20, blank=True, null=True)
-    clienteAdministradora = models.CharField(max_length=20, blank=True, null=True)
+    clienteAdministradora = models.ForeignKey(tbAdministradora, on_delete=models.CASCADE)
     clienteCftv = models.ForeignKey(tbSistemaCftv, on_delete=models.CASCADE)
     clienteSai = models.ForeignKey(tbSistemaSai, on_delete=models.CASCADE)
     clienteSca = models.ForeignKey(tbSistemaSca, on_delete=models.CASCADE)
     clienteSap = models.ForeignKey(tbSistemaSap, on_delete=models.CASCADE)
     clienteSdai = models.ForeignKey(tbSistemaSdai, on_delete=models.CASCADE)
     clienteCidade = models.ForeignKey(tbCidade, on_delete=models.CASCADE)
-
-
-
+    clienteObservacao = RichTextField(blank=True, null=True)
     class Meta:
         db_table = 'tbCliente'
         verbose_name_plural = 'Clientes'
@@ -86,82 +115,68 @@ class tbCliente(models.Model):
         return self.clienteNome
 
 
-
-
-
-class tbSistemas(models.Model):
-    sistemasTipo = models.CharField(max_length=20, blank=True, null=True)
-
-    class Meta:
-        db_table = 'tbSistemas'
-        verbose_name_plural = 'Sistemas'
-
-    def __str__(self):
-        return self.sistemasTipo
-
-
-
-
-
-
-
-
-
-
 class tbEquipamento(models.Model):
-    equipamentoNome = models.CharField(max_length=50, blank=True, null=True)
+    equipamento = models.CharField(max_length=50, blank=True, null=True)
     equipamentoLogin = models.CharField(max_length=50, blank=True, null=True)
     equipamentoPassword = models.CharField(max_length=50, blank=True, null=True)
     equipamentoQrCode = models.CharField(max_length=50, blank=True, null=True)
-    equipamentoObservacao = models.CharField(max_length=255, blank=True, null=True)
-
-
+    equipamentoObservacao = RichTextField(blank=True, null=True)
+    equipamentoCliente = models.ForeignKey(tbCliente, on_delete=models.CASCADE)
+    equipamentoSistema = models.ForeignKey(tbSistemas, on_delete=models.CASCADE)
     class Meta:
         db_table = 'tbEquipamento'
         verbose_name_plural = 'Equipamentos'
-
     def __str__(self):
-        return self.equipamentoNome
+        return self.equipamento
+
+
+class tbManuais(models.Model):
+    manualNome = models.CharField(max_length=100, blank=True, null=True)
+    manualLink = models.CharField(max_length=255, blank=True, null=True)
+    manualFabricante = models.ForeignKey(tbFabricante, on_delete=models.CASCADE)
+    manualSistema = models.ForeignKey(tbSistemas, on_delete=models.CASCADE)
+    class Meta:
+        db_table = 'tbManuais'
+        verbose_name_plural = 'Manuais'
+    def __str__(self):
+        return self.manualNome
+
+
+
 
 class tbPreventivas(models.Model):
     preventivaEquipamento = models.CharField(max_length=100, blank=True, null=True)
     preventivaProcedimento = models.CharField(max_length=255, blank=True, null=True)
     preventivaTempo = models.IntegerField(blank=True, null=True)
-
-
+    preventivaObservacao = RichTextField(blank=True, null=True)
     class Meta:
         db_table = 'tbPreventivas'
         verbose_name_plural = 'Preventivas'
-
     def __str__(self):
         return self.preventivaEquipamento
 
-class tbSenhasPadroess(models.Model):
+class tbSenhasPadroes(models.Model):
+    senhaEquipamento = models.CharField(max_length=255, blank=True, null=True)
     senhaLogin = models.CharField(max_length=50, blank=True, null=True)
     senhaPassword = models.CharField(max_length=50, blank=True, null=True)
-    senhaObservacao = models.CharField(max_length=255, blank=True, null=True)
-
-
-
+    senhaFabricante = models.ForeignKey(tbFabricante, on_delete=models.CASCADE)
     class Meta:
-        db_table = 'tbSenhasPadores'
+        db_table = 'tbSenhasPadroes'
         verbose_name_plural = 'Senhas Padrões'
-
     def __str__(self):
         return self.senhaLogin
 
 
 class tbWework(models.Model):
-    weworkNome = models.CharField(max_length=50, blank=True, null=True)
+    wework = models.CharField(max_length=50, blank=True, null=True)
     weworkQuantAndares = models.IntegerField(blank=True, null=True)
     weworkAndares = models.CharField(max_length=50, blank=True, null=True)
-
-
+    weworkCondominio = models.CharField(max_length=100, blank=True, null=True)
+    weworkSdai = models.ForeignKey(tbSistemaSdai, on_delete=models.CASCADE)
     class Meta:
         db_table = 'tbWework'
         verbose_name_plural = 'Weworks'
-
     def __str__(self):
-        return self.weworkNome
+        return self.wework
 
 
