@@ -5,7 +5,13 @@ from .models import tbCliente, tbCidade, tbAdministradora, tbSistemaCftv, tbSist
 
 # Register your models here.
 
+class tbCliente(admin.ModelAdmin):
+    list_display = ('id','clienteNome','clienteAdministrador','clienteAdministradora','clienteCftv')
+
 admin.site.register(tbCliente)
+
+
+
 admin.site.register(tbCidade)
 admin.site.register(tbFabricante)
 admin.site.register(tbAdministradora)
