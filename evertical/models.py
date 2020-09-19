@@ -136,7 +136,7 @@ class tbPreventivas(models.Model):
     def __str__(self):
         return self.preventivaEquipamento
 
-class tbSenhasPadroes(models.Model):
+class tbSenhasPadroess(models.Model):
     senhaLogin = models.CharField(max_length=50, blank=True, null=True)
     senhaPassword = models.CharField(max_length=50, blank=True, null=True)
     senhaObservacao = models.CharField(max_length=255, blank=True, null=True)
