@@ -1,41 +1,87 @@
 from django.db import models
 
 # Create your models here.
+class tbAdministradora(models.Model):
+    administradoraNome = models.CharField(max_length=50, blank=50, null=True)
+    class Meta:
+        db_table = 'tbAdministradora'
+        verbose_name_plural = 'Administradora'
+    def __str__(self):
+        return self.administradoraNome
+
+
 class tbSistemaCftv(models.Model):
     sistemaCftvNome = models.CharField(max_length=50, blank=True, null=True)
-
     class Meta:
         db_table = 'tbSistemaCftv'
         verbose_name_plural = 'Sistema de CFTV'
-
     def __str__(self):
         return self.sistemaCftvNome
 
 
-class tbCliente(models.Model):
-    clienteNome = models.CharField(max_length=50, blank=True, null=True)
-    clienteAdministrador = models.CharField(max_length=20, blank=True, null=True)
-    clienteCftv = models.ForeignKey(tbSistemaCftv, on_delete=models.CASCADE)
-
+class tbSistemaSai(models.Model):
+    sistemaSaiNome = models.CharField(max_length=50, blank=True, null=True)
     class Meta:
-        db_table = 'tbCliente'
-        verbose_name_plural = 'Clientes'
-
+        db_table = 'tbSistemaSai'
+        verbose_name_plural = 'Sistema de SAI'
     def __str__(self):
-        return self.clienteNome
+        return self.sistemaSaiNome
+
+
+class tbSistemaSca(models.Model):
+    sistemaScaNome = models.CharField(max_length=50, blank=True, null=True)
+    class Meta:
+        db_table = 'tbSistemaSca'
+        verbose_name_plural = 'Sistema de SCA'
+    def __str__(self):
+        return self.sistemaScaNome
+
+
+class tbSistemaSap(models.Model):
+    sistemaSapNome = models.CharField(max_length=50, blank=True, null=True)
+    class Meta:
+        db_table = 'tbSistemaSap'
+        verbose_name_plural = 'Sistema de SAP'
+    def __str__(self):
+        return self.sistemaSapNome
+
+
+class tbSistemaSdai(models.Model):
+    sistemaSdaiNome = models.CharField(max_length=50, blank=True, null=True)
+    class Meta:
+        db_table = 'tbSistemaSdai'
+        verbose_name_plural = 'Sistema de SDAI'
+    def __str__(self):
+        return self.sistemaSdaiNome
 
 
 class tbCidade(models.Model):
     cidadeNome = models.CharField(max_length=50, blank=True, null=True)
     cidadeEstado = models.CharField(max_length=50, blank=True, null=True)
-
-
     class Meta:
         db_table = 'tbCidade'
         verbose_name_plural = 'Cidade'
-
     def __str__(self):
         return self.cidadeNome
+
+
+
+class tbCliente(models.Model):
+    clienteNome = models.CharField(max_length=50, blank=True, null=True)
+    clienteAdministrador = models.CharField(max_length=20, blank=True, null=True)
+    clienteAdministradora = models.CharField(max_length=20, blank=True, null=True)
+
+
+
+
+    class Meta:
+        db_table = 'tbCliente'
+        verbose_name_plural = 'Clientes'
+    def __str__(self):
+        return self.clienteNome
+
+
+
 
 
 class tbSistemas(models.Model):
@@ -49,62 +95,13 @@ class tbSistemas(models.Model):
         return self.sistemasTipo
 
 
-class tbAdministradora(models.Model):
-    administradoraNome = models.CharField(max_length=50, blank=50, null=True)
-
-    class Meta:
-        db_table = 'tbAdministradora'
-        verbose_name_plural = 'Administradora'
-
-    def __str__(self):
-        return self.administradoraNome
 
 
 
 
 
-class tbSistemaSai(models.Model):
-    sistemaSaiNome = models.CharField(max_length=50, blank=True, null=True)
-
-    class Meta:
-        db_table = 'tbSistemaSai'
-        verbose_name_plural = 'Sistema de SAI'
-
-    def __str__(self):
-        return self.sistemaSaiNome
 
 
-class tbSistemaSca(models.Model):
-    sistemaScaNome = models.CharField(max_length=50, blank=True, null=True)
-
-    class Meta:
-        db_table = 'tbSistemaSca'
-        verbose_name_plural = 'Sistema de SCA'
-
-    def __str__(self):
-        return self.sistemaScaNome
-
-
-class tbSistemaSap(models.Model):
-    sistemaSapNome = models.CharField(max_length=50, blank=True, null=True)
-
-    class Meta:
-        db_table = 'tbSistemaSap'
-        verbose_name_plural = 'Sistema de SAP'
-
-    def __str__(self):
-        return self.sistemaSapNome
-
-
-class tbSistemaSdai(models.Model):
-    sistemaSdaiNome = models.CharField(max_length=50, blank=True, null=True)
-
-    class Meta:
-        db_table = 'tbSistemaSdai'
-        verbose_name_plural = 'Sistema de SDAI'
-
-    def __str__(self):
-        return self.sistemaSdaiNome
 
 class tbEquipamento(models.Model):
     equipamentoNome = models.CharField(max_length=50, blank=True, null=True)
@@ -134,7 +131,7 @@ class tbPreventivas(models.Model):
     def __str__(self):
         return self.preventivaEquipamento
 
-class tbSenhasPadores(models.Model):
+class tbSenhasPadroes(models.Model):
     senhaLogin = models.CharField(max_length=50, blank=True, null=True)
     senhaPassword = models.CharField(max_length=50, blank=True, null=True)
     senhaObservacao = models.CharField(max_length=255, blank=True, null=True)
