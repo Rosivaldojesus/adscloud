@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import tbCliente, tbEquipamento
+from .models import tbCliente, tbEquipamento,tbArtigos
 from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 
@@ -9,6 +9,17 @@ from django.shortcuts import render, redirect, get_object_or_404
 # Create your views here.
 def index(request):
     return render(request, 'index.html')
+
+def artigos(request):
+    artigos = tbArtigos.objects.all()
+    dados = {'artigos': artigos}
+    return render(request, 'artigos.html', dados)
+
+def artigoVisualizacao(request):
+    artigo = request.GET.get('id')
+    if artigo:
+        artigo = tbArtigos.objects.get(id=artigo)
+        return render(request,'artigoVisualizacao.html', {'artigo':artigo})
 
 def clientes(request):
     clientes = tbCliente.objects.all()

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+	<section>
+
+		<h4>Título: {{ artigo.artigoTitulo }}</h4>
+		<h4>Subtítulo: {{ artigo.artigoSubtitulo }}</h4>
+		<h4>Artigo: {{ artigo.artigoTexto }}</h4>
+
+	</section>
+</div>
+{% endblock %}
