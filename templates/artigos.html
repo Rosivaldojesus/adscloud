@@ -5,22 +5,22 @@
 <div class="container">
 	<section>
 		<table class="table">
-		<thead class="thead-dark">
-			<tr>
-				<td>Título</td>
-				<td>Subtítulo</td>
-				<td>Mais</td>
-			</tr>
-		</thead>
-		<tbody>
-			{% for artigo in artigos %}
-			<tr>
-				<th>{{ artigo.artigoTitulo }}</th>
-				<th>{{ artigo.artigoSubtitulo }}</th>
-				<th><a href="/artigoVisualizacao/?id={{ artigo.id }}">Visualização</th>
-			</tr>
-			{% endfor %}
-		</tbody>
+			<thead class="thead-dark">
+				<tr>
+					<td>Título</td>
+					<td>Subtítulo</td>
+					<td>Mais</td>
+				</tr>
+			</thead>
+			<tbody>
+				{% for artigo in artigos %}
+				<tr>
+					<th>{{ artigo.artigoTitulo }}</th>
+					<th>{{ artigo.artigoSubtitulo }}</th>
+					<th><a href="/artigoVisualizacao/?id={{ artigo.id }}">Visualização</th>
+				</tr>
+				{% endfor %}
+			</tbody>
 	</table>
 	</section>
 </div>
