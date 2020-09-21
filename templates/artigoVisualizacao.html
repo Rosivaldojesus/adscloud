@@ -4,11 +4,12 @@
 
 <div class="container">
 	<section>
-
-		<h4>Título: {{ artigo.artigoTitulo }}</h4>
+		<h1>{{ artigo.artigoTitulo }}</h1>
+		<br>
 		<h4>Subtítulo: {{ artigo.artigoSubtitulo }}</h4>
-		<h4>Artigo: {{ artigo.artigoTexto | safe }}</h4>
-
+		<br>
+		<h6>Artigo: {{ artigo.artigoTexto | safe }}</h6>
 	</section>
+	<br><br>
 </div>
 {% endblock %}
