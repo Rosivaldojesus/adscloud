@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import tbCliente, tbEquipamento,tbArtigos, tbManuais, tbPreventivas
+from .models import tbCliente, tbEquipamento,tbArtigos, tbManuais, tbPreventivas, tbSenhasPadroes
 from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 
@@ -60,6 +60,10 @@ def manuaisPreventivasInformacoes(request):
     if preventiva:
         dados['preventiva'] = tbPreventivas.objects.get(id=preventiva)
     return render(request, 'manuaisPreventivasInformacoes.html', dados)
+
+def senhasPadroes(request):
+    senha = tbSenhasPadroes.objects.all()
+    return render(request, 'senhasPadroes.html', {'senha':senha})
 
 
 def base(request):
