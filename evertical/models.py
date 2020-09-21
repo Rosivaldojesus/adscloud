@@ -134,6 +134,7 @@ class tbEquipamento(models.Model):
 class tbManuais(models.Model):
     manualNome = models.CharField(max_length=100, blank=True, null=True)
     manualLink = models.CharField(max_length=255, blank=True, null=True)
+    manualDescricao = models.CharField(max_length=255, blank=True, null=True)
     manualFabricante = models.ForeignKey(tbFabricante, on_delete=models.CASCADE)
     manualSistema = models.ForeignKey(tbSistemas, on_delete=models.CASCADE)
     class Meta:
@@ -147,7 +148,7 @@ class tbManuais(models.Model):
 
 class tbPreventivas(models.Model):
     preventivaEquipamento = models.CharField(max_length=100, blank=True, null=True)
-    preventivaProcedimento = models.CharField(max_length=255, blank=True, null=True)
+    preventivaProcedimento = RichTextField(blank=True, null=True)
     preventivaTempo = models.IntegerField(blank=True, null=True)
     preventivaObservacao = RichTextField(blank=True, null=True)
     manualSistema = models.ForeignKey(tbSistemas, on_delete=models.CASCADE)
