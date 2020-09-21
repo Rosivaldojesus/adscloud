@@ -4,11 +4,16 @@
 
 <div class="container">
 	<section>
-		<h1>{{ artigo.artigoTitulo }}</h1>
+		<div align="center">
+			<h1>{{ artigo.artigoTitulo }}</h1>
+		</div>
 		<br>
-		<h4>Subtítulo: {{ artigo.artigoSubtitulo }}</h4>
+		<div>
+			<h4 align="center">{{ artigo.artigoSubtitulo }}</h4>
+		</div>
+
 		<br>
-		<h6>Artigo: {{ artigo.artigoTexto | safe }}</h6>
+		<h6>{{ artigo.artigoTexto | safe }}</h6>
 	</section>
 	<br><br>
 </div>
