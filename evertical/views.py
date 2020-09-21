@@ -54,6 +54,13 @@ def manuaisPreventivas(request):
     manualPreventiva = tbPreventivas.objects.all()
     return render(request, 'manuaisPreventivas.html', {'manualPreventiva':manualPreventiva})
 
+def manuaisPreventivasInformacoes(request):
+    preventiva = request.GET.get('id')
+    dados = {}
+    if preventiva:
+        dados['preventiva'] = tbPreventivas.objects.get(id=preventiva)
+    return render(request, 'manuaisPreventivasInformacoes.html', dados)
+
 
 def base(request):
     return render(request, 'base.html')

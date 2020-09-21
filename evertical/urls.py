@@ -2,7 +2,7 @@ from django.urls import path
 from .views import index,  base, model_header, model_footer
 from .views import artigos, artigoVisualizacao
 from .views import clientes, clientesInformacoes, clienteEquipamentos, clienteEquipamentosInformacoes
-from .views import manuaisFabricantes, manuaisPreventivas
+from .views import manuaisFabricantes, manuaisPreventivas, manuaisPreventivasInformacoes
 
 urlpatterns = [
     path('', index),
@@ -19,4 +19,5 @@ urlpatterns = [
 
     path('manuaisFabricantes/', manuaisFabricantes),
     path('manuaisPreventivas/', manuaisPreventivas),
+    path('manuaisPreventivasInformacoes/',manuaisPreventivasInformacoes)
 ]

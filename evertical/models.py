@@ -144,8 +144,6 @@ class tbManuais(models.Model):
         return self.manualNome
 
 
-
-
 class tbPreventivas(models.Model):
     preventivaEquipamento = models.CharField(max_length=100, blank=True, null=True)
     preventivaProcedimento = RichTextField(blank=True, null=True)
