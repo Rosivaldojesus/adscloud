@@ -66,42 +66,46 @@
 		</div>
 	</section>
 	<br><br>
+		<!-- ********************************************************************************************** -->
 	<!-- ********************************************************************************************** -->
-	<!-- ********************************************************************************************** -->
-	<!-- Sessão onde fica as opçoes de Artigos e Fórum -->
 	<section>
-		<div class=" container card-deck">
-			<div class="card shadow p-3 border-0">
-				<h4 class="card border-0">
-					<strong>
-						<i class='fas fa-folder-open ' style='font-size:36px'></i>
-						&ensp;Artigos
-					</strong></h4>
+		<div class="container">
+		  <h2 class="border-bottom  border-info text-info">
+            <a class="font-weight-bold  ">
+                <h2>Artigos</h2>
+            </a>
+		  </h2>
+		</div>
+
+
+		<div class="card shadow p-3 border-0">
+
 				<div class="card-body">
-				<h4 class="card-text">{{artigo.tituloartigo}}</h4>
+
+					{% for artigo in artigo %}
+
+				<h4 class="card-text">{{ artigo.artigoTitulo }}</h4>
 				<a href="/artigosVisualizacao/?id={{ artigo.id }}">
-					<h6>{{ artigo.subtituloartigo}}</h6>
+					<h6>{{ artigo.artigoSubtitulo }}</h6>
 				</a>
+					{% endfor %}
 					<div align="right">
 						<h5><a href="/artigos/">Ver +</a></h5>
 					</div>
 				</div>
 			</div>
-			<div class="card shadow p-3 border-0">
-				<h4 class="card border-0">
-					<strong>
-						<i class='fas fa-chalkboard-teacher' style='font-size:36px'></i>
-						&ensp;Fórum
-					</strong>
-				</h4>
-				<div class="card-body">
-					<a href="/forumRespostas/?id={{ perguntaForum.id }}">
-					<h5 class="card-text">{{perguntaForum.perguntaForum}}</h5>
-					</a>
-				</div>
-			</div>
-		</div>
+
+
+
 	</section>
+
+
+
+	<!-- ********************************************************************************************** -->
+	<!-- ********************************************************************************************** -->
+	<!-- Sessão onde fica as opçoes de Artigos e Fórum -->
+
+
 	<br><br>
 	<!-- ********************************************************************************************** -->
 
