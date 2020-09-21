@@ -1,6 +1,7 @@
 from django.db import models
 from ckeditor.fields import RichTextField
 
+
 # Create your models here.
 class tbAdministradora(models.Model):
     administradora = models.CharField(max_length=50, blank=50, null=True)
@@ -89,7 +90,7 @@ class tbSistemas(models.Model):
 class tbArtigos(models.Model):
     artigoTitulo = models.CharField(max_length=255, blank=True, null=True)
     artigoSubtitulo = models.CharField(max_length=255, blank=True, null=True)
-    artigoTexto = models.CharField(max_length=255, blank=True, null=True)
+    artigoTexto = RichTextField(blank=True, null=True)
     class Meta:
         db_table = 'tbArtigos'
         verbose_name_plural = 'Artigos'
