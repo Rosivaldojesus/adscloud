@@ -150,6 +150,7 @@ class tbPreventivas(models.Model):
     preventivaProcedimento = models.CharField(max_length=255, blank=True, null=True)
     preventivaTempo = models.IntegerField(blank=True, null=True)
     preventivaObservacao = RichTextField(blank=True, null=True)
+    manualSistema = models.ForeignKey(tbSistemas, on_delete=models.CASCADE)
     class Meta:
         db_table = 'tbPreventivas'
         verbose_name_plural = 'Preventivas'

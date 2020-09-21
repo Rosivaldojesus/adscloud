@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+<!--		<section>-->
+<!--		<div class="col-md-12">-->
+<!--			<div align="right" >-->
+<!--			  <a class="btn btn-primary" href="/manuaisFabricantesCreate/" role="button">Novo Manual</a>-->
+<!--			</div>-->
+<!--		</div>-->
+
+<!--	</section>-->
+	<br><br>
+	<h1>Manuais de Preventivas</h1>
+	<section>
+		<table class="table">
+		   <thead class="thead-dark">
+			   <tr>
+				   <th>ID</th>
+				   <th>Equipamento</th>
+				   <th>Tipo de Sistema</th>
+				   <th>Tempo Execução</th>
+				   <th>+ Mais</th>
+			   </tr>
+			</thead>
+			<tbody >
+				{% for preventiva in manualPreventiva %}
+				<tr class="shadow-lg p-3 mb-5 bg-white rounded ">
+					<th>{{ preventiva.id }}</th>
+					<th >{{ preventiva.preventivaEquipamento }}</th>
+					<th >{{ preventiva.tipo_de_sistema }}</th>
+					<th>{{ preventiva.preventivaTempo }} Min</th>
+					<th><a href="/manuaisPreventivasInfor/?id={{ preventiva.id }}" class="btn btn-primary">+ Infor</a></th>
+				</tr>
+			</tbody>
+		{% endfor%}
+		</table>
+	</section>
+</div>
+{% endblock %}s

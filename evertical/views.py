@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import tbCliente, tbEquipamento,tbArtigos
+from .models import tbCliente, tbEquipamento,tbArtigos, tbManuais, tbPreventivas
 from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 
@@ -45,6 +45,14 @@ def clienteEquipamentosInformacoes(request):
     if equipamento:
         equipamento = tbEquipamento.objects.get(id=equipamento)
     return render(request, 'clienteEquipamentosInformacoes.html', {'equipamento':equipamento})
+
+def manuaisFabricantes(request):
+    manualFabricante = tbManuais.objects.all()
+    return render(request, 'manuaisFabricantes.html',{'manualFabricante':manualFabricante})
+
+def manuaisPreventivas(request):
+    manualPreventiva = tbPreventivas.objects.all()
+    return render(request, 'manuaisPreventivas.html', {'manualPreventiva':manualPreventiva})
 
 
 def base(request):
