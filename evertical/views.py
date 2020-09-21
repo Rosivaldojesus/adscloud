@@ -34,12 +34,17 @@ def clientesInformacoes(request):
     return render(request, 'clientesInformacoes.html', dados)
 
 def clienteEquipamentos(request):
-        equipamento = request.GET.get('id')
-        dados = {}
-        if equipamento:
-            dados['equipamento'] = tbEquipamento.objects.filter(equipamentoCliente=equipamento)
-        return render(request, 'clienteEquipamentos.html', dados)
+    equipamento = request.GET.get('id')
+    dados = {}
+    if equipamento:
+        dados['equipamento'] = tbEquipamento.objects.filter(equipamentoCliente=equipamento)
+    return render(request, 'clienteEquipamentos.html', dados)
 
+def clienteEquipamentosInformacoes(request):
+    equipamento = request.GET.get('id')
+    if equipamento:
+        equipamento = tbEquipamento.objects.get(id=equipamento)
+    return render(request, 'clienteEquipamentosInformacoes.html', {'equipamento':equipamento})
 
 
 def base(request):

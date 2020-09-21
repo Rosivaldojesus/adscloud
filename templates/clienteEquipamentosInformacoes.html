@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<div class = "container" >
+
+	<h1>Informações de cada equipamento </h1>
+
+    <h2 class="font-weight-bolder">{{ equipamento.cliente }}</h2>
+    <p><b>Sistema:</b> {{ equipamento.equipamentoSistema }}</p>
+    <p><b>Equipamento:</b> {{ equipamento.equipamento }}</p>
+    <p><b>Login:</b> {{ equipamento.equipamentoLogin }}</p>
+    <p><b>Senha:</b> {{ equipamento.equipamentoPassword }}</p>
+    <p><b>QRcode:</b> {{ equipamento.equipamentoQrCode }}</p>
+    <h3><p><b>Informações adicionais:</b></h3> {{ equipamento.equipamentoObservacao | safe}}</p>
+    <br><br>
+</div>
+{% endblock %}

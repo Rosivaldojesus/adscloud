@@ -14,6 +14,7 @@
 					<th>Login</th>
 					<th>Senha</th>
 					<th>QrCode</th>
+					<th>Opções</th>
 
 
 				</tr>
@@ -26,6 +27,8 @@
 					<td>{{ equipamento.equipamentoLogin }}</td>
 					<td>{{ equipamento.equipamentoPassword }}</td>
 					<td>{{ equipamento.equipamentoQrCode }}</td>
+<!--					<td><a href="/clienteEquipamentosInformacoes/?id={{ cliente.id }}">Mais</td>-->
+					<td><a href="/clienteEquipamentosInformacoes/?id={{ equipamento.id }}"> Mais</td>
 				</tr>
 			{% endfor %}
 			</tbody>
