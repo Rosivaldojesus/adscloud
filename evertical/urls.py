@@ -4,7 +4,7 @@ from .views import artigos, artigoVisualizacao
 from .views import clientes, clientesInformacoes, clienteEquipamentos, clienteEquipamentosInformacoes
 from .views import manuaisFabricantes, manuaisPreventivas, manuaisPreventivasInformacoes
 from .views import senhasPadroes
-from .views import wework
+from .views import wework, weworkView
 
 urlpatterns = [
     path('', index),
@@ -26,4 +26,5 @@ urlpatterns = [
     path('senhasPadroes/', senhasPadroes),
 
     path('wework/', wework),
+    path('weworkView/', weworkView),
 ]

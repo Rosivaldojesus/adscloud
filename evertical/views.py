@@ -69,6 +69,13 @@ def wework(request):
     wework = tbWework.objects.all()
     return render(request, 'wework.html', {'wework':wework})
 
+def weworkView(request):
+    wework = request.GET.get('id')
+    dados = {}
+    if wework:
+        dados['wework'] = tbWework.objects.get(id=wework)
+    return render(request, 'weworkView.html', dados)
+
 def base(request):
     return render(request, 'base.html')
 
