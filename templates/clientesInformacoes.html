@@ -2,18 +2,43 @@
 {% load static %}
 {% block content %}
 
-<div class="container">
-	<section>
 
-		<h4>Cliente: {{ cliente.clienteNome }}</h4>
-		<h4>Administrador: {{ cliente.clienteAdministrador }}</h4>
-		<h4>Administradora: {{ cliente.clienteAdministradora }}</h4>
-		<h4>CFTV: {{ cliente.clienteCftv }}</h4>
-		<h4>SAI: {{ cliente.clienteSai }}</h4>
-		<h4>SCA: {{ cliente.clienteSca }}</h4>
-		<h4>SAP: {{ cliente.clienteSap }}</h4>
-		<h4>SDAI: {{ cliente.clienteSdai }}</h4>
-		<h4>Anotações: {{ cliente.clienteObservacao }}</h4>
-	</section>
-</div>
+<div class="container">
+    <br>
+    <div>
+        <h2 class="border-bottom  border-info">
+            <a class="font-weight-bold  ">
+                <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-building" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022zM6 8.694L1 10.36V15h5V8.694zM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5V15z"/>
+                    <path d="M2 11h1v1H2v-1zm2 0h1v1H4v-1zm-2 2h1v1H2v-1zm2 0h1v1H4v-1zm4-4h1v1H8V9zm2 0h1v1h-1V9zm-2 2h1v1H8v-1zm2 0h1v1h-1v-1zm2-2h1v1h-1V9zm0 2h1v1h-1v-1zM8 7h1v1H8V7zm2 0h1v1h-1V7zm2 0h1v1h-1V7zM8 5h1v1H8V5zm2 0h1v1h-1V5zm2 0h1v1h-1V5zm0-2h1v1h-1V3z"/>
+                  </svg>
+                {{ cliente.clienteNome }}
+            </a>
+        </h2>
+
+            <p><b>Adminstradora:</b> {{ cliente.clienteAdministradora }}</p>
+            <p><b>Gerência:</b> {{ cliente.clienteAdministrador }}</p>
+            <p><b>Cidade:</b> {{ cliente.cidade_cliente }}</p>
+            <p><b>Estado:</b> {{ cliente.uf_cliente }}</p>
+        </h4>
+    </div>
+    <br>
+    <div>
+        <h3 class="border-bottom border-info">
+            <strong>Tipos de Sistemas</strong>
+        </h3>
+        <h4>
+            <p><b>CFTV:</b> {{ cliente.clienteCftv }} </p>
+            <p><b>SAI:</b> {{ cliente.clienteSai }} </p>
+			<p><b>SCA:</b> {{ cliente.clienteSca }} </p>
+            <p><b>SAP:</b> {{ cliente.clienteSap }} </p>
+            <p><b>SDAI:</b> {{ cliente.clienteSdai }}</p>
+			<h4>Anotações: {{ cliente.clienteObservacao }}</h4>
+
+
+        </h4>
+    </div>
+    <br><br>
+
+
 {% endblock %}
