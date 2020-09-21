@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import tbCliente, tbEquipamento,tbArtigos, tbManuais, tbPreventivas, tbSenhasPadroes
+from .models import tbCliente, tbEquipamento,tbArtigos, tbManuais, tbPreventivas, tbSenhasPadroes, tbWework
 from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 
@@ -65,6 +65,9 @@ def senhasPadroes(request):
     senha = tbSenhasPadroes.objects.all()
     return render(request, 'senhasPadroes.html', {'senha':senha})
 
+def wework(request):
+    wework = tbWework.objects.all()
+    return render(request, 'wework.html', {'wework':wework})
 
 def base(request):
     return render(request, 'base.html')
