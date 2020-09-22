@@ -1,6 +1,7 @@
 
 {% extends "base.html" %}
 
+{% load static %}
 {% block content %}
 <div class="container-xl">
     <br><br>
@@ -12,6 +13,99 @@
         <h5>O sistema estará passando por  constantes atualizações</h5>
     </div>
     <br><br>
+
+	<!-- ********************************************************************************************** -->
+	<section>
+
+		<!DOCTYPE html>
+		<html lang="en">
+
+		<head>
+			<meta charset="utf-8" />
+			<meta http-equiv="X-UA-Compatible" content="IE=edge">
+			<title>Page Title</title>
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
+			<style>
+				.owl-carousel .item img{
+					width: 140px;
+					height: 140px;
+				}
+			</style>
+		</head>
+
+		<body>
+
+			<div class="owl-carousel owl-theme">
+				<div class="item">
+					<a href="#" title="">
+						<img src="{% static "img/fabricantes/fb_03.png" %}" alt="">
+					</a>
+				</div>
+				<div class="item">
+					<a href="#" title="">
+						<img src="{% static "img/fabricantes/fb_02.png" %}" alt="">
+					</a>
+				</div>
+				<div class="item">
+					<a href="#" title="">
+						<img src="{% static "img/fabricantes/fb_03.png" %}" alt="">
+					</a>
+				</div>
+
+				<div class="item">
+					<a href="#" title="">
+						<img src="{% static "img/fabricantes/fb_05.png" %}" alt="">
+					</a>
+				</div>
+				<div class="item">
+					<a href="#" title="">
+						<img src="{% static "img/fabricantes/fb_06.png" %}" alt="">
+					</a>
+				</div>
+				<div class="item">
+					<a href="#" title="">
+						<img src="{% static "img/fabricantes/fb_07.png" %}" alt="">
+					</a>
+				</div>
+
+			</div>
+
+			<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+			<script>
+				$('.owl-carousel').owlCarousel({
+					nav: true,
+					loop: true, //deixa ele rodando eternament
+					margin: 10, // distancia entre imgs
+					autoplay: true, // fica rodando sozinho
+					autoplayTimeout: 1500, // tempo em que gira e para trocando imgsr
+					responsive: {
+						0: {
+							items: 2 // 2 img em telas até 767px
+						},
+						768: {
+							items: 3 // 3 img em telas maiores que 768px
+						},
+						992: {
+							items: 5 // 5 img em telas maiores que 992px
+						}
+					}
+				})
+			</script>
+
+		</body>
+
+		</html>
+
+
+	</section>
+
+	<!-- ********************************************************************************************** -->
+
+
 
 
 	<!-- ********************************************************************************************** -->
