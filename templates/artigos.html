@@ -5,16 +5,16 @@
 	<section>
 		<table class="table">
 			<thead class="thead-dark">
-				<th>Título</th>
-				<th>Painel</th>
-				<th>Mais</th>
+				<th><h5>Título</h5></th>
+				<th><h5>Painel</h5></th>
+				<th><h5>Mais</h5></th>
 			</thead>
 			<tbody>
-					{% for artigo in artigos %}
+			<h5>{% for artigo in artigos %}</h5>
 					<tr>
-						<th>{{ artigo.artigoTitulo }}</th>
-						<th>{{ artigo.artigoSubtitulo }}</th>
-						<th><a href="/artigoVisualizacao/?id={{ artigo.id }}">Visualização</th>
+						<th><h5>{{ artigo.artigoTitulo }}</h5></th>
+						<th><h5>{{ artigo.artigoSubtitulo }}</h5></th>
+						<th><a href="/artigoVisualizacao/?id={{ artigo.id }}"><h5>Visualização</h5></th>
 					</tr>
 					{% endfor %}
 			</tbody>
