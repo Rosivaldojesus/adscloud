@@ -3,6 +3,10 @@
 {% block content %}
 <div class="container-xl">
 		<br>
+	<!-- ********************************************************************************************** -->
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+	<!-- ********************************************************************************************** -->
+	<!-- ********************************************************************************************** -->
 		<section>
 		<div>
 			<h2 class="border-bottom  border-info text-info">
@@ -21,31 +25,131 @@
 			<div class="card rounded bg-secondary text-white border-0 shadow">
 				<div class="card-body" align="center">
 					<h4 class="card-title" align="center">SAI</h4>
-					<h4 class="card-title" align=""><strong>{{ qnt_equi_sai }}</strong></h4>
+					<h4 class="card-title" align=""><strong>SAI</strong></h4>
 				</div>
 			</div>
 			<div class="card rounded bg-success text-white border-0 shadow">
 				<div class="card-body">
 					<h4 class="card-title" align="center">SAP</h4>
-					<h4 class="card-title" align="center"><strong>{{ qnt_equi_sap }}</strong></h4>
+					<h4 class="card-title" align="center"><strong>SAP</strong></h4>
 				</div>
 			</div>
 			<div class="card rounded bg-warning text-white border-0 shadow">
 				<div class="card-body">
 					<h4 class="card-title" align="center">SCA</h4>
-					<h4 class="card-title" align="center"><strong>{{ qnt_equi_sca }}</strong></h4>
+					<h4 class="card-title" align="center"><strong>SCA</strong></h4>
 				</div>
 			</div>
 			<div class="card rounded bg-danger text-white border-0 shadow">
 				<div class="card-body">
 					<h4 class="card-title" align="center">SDAI</h4>
-					<h4 class="card-title" align="center"><strong>{{ qnt_equi_sdai }}</strong></h4>
+					<h4 class="card-title" align="center"><strong>SDAI</strong></h4>
 				</div>
 			</div>
 		</div>
 	</section>
 	<br>
 	<br>
+	<!-- ********************************************************************************************** -->
+	<!-- ********************************************************************************************** -->
+	<!-- ********************************************************************************************** -->/
+	<section>
+		<div class="card-deck">
+			<div class="card border-0">
+				<div>
+					<h2 class="border-bottom  border-info text-info">
+					  <a class="font-weight-bold  ">
+						  <h2>Manuais</h2>
+					  </a>
+					</h2>
+				</div>
+				<div>
+					<canvas id="quantidadeManuais" width="400" height="250"></canvas>
+						<script>
+							var ctxy = document.getElementById('quantidadeManuais').getContext('2d');
+							var myDoughnutChart = new Chart(ctxy, {
+								// The type of chart we want to create
+								type: 'pie',
+
+								// The data for our dataset
+								data: {
+									labels: ['CFTV', 'SAI', 'SAP', 'SCA', 'SDAI'],
+									datasets: [{
+										label: 'Equipamentos nos clientes',
+										backgroundColor: '',
+										borderColor: 'white',
+										data: [{{ qnt_man_cftv }},{{ qnt_man_sai }}, {{ qnt_man_sap }}, {{ qnt_man_sca }}, {{ qnt_man_sdai }}],
+
+										backgroundColor: [
+										'rgba(0,0,255)',
+										'rgba(79,79,79)',
+										'rgba(0,128,0)',
+										'rgba(255,215,0)',
+										'rgba(255,0,0)'
+										],
+									}]
+								},
+								// Configuration options go here
+								options: {}
+							});
+					</script>
+				</div>
+			</div>
+			<div class="card border-0">
+				<div>
+					<h2 class="border-bottom  border-info text-info">
+					  <a class="font-weight-bold  ">
+						  <h2>Clientes</h2>
+					  </a>
+					</h2>
+				</div>
+				<div class="card-body border-0">
+					<canvas id="quantidadeClientes" width="400" height="250"></canvas>
+					<script>
+						var ctxy = document.getElementById('quantidadeClientes').getContext('2d');
+						var myDoughnutChart = new Chart(ctxy, {
+							// The type of chart we want to create
+							type: 'polarArea',
+
+							// The data for our dataset
+							data: {
+								labels: ['CBRE', 'Cyrela', 'Saphyr', 'iguatemi', 'BBZ'],
+
+								datasets: [{
+									label: 'Equipamentos nos clientes',
+									backgroundColor: '',
+									borderColor: 'white',
+									data: [{{ qnt_cbre }}, {{ qnt_ccp }} , {{ qnt_saphyr }}, {{ qnt_iguatemi }}, {{ qnt_bbz }}, ],
+
+									backgroundColor: [
+									'rgba(0,128,0)',
+									'rgba(70,130,180)',
+									'rgba(75,0,130)',
+									'rgba(25,25,112)'
+            						],
+								}]
+							},
+							// Configuration options go here
+							options: {}
+						});
+					</script>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- ********************************************************************************************** -->
+	<!-- ********************************************************************************************** -->
+	<!-- ********************************************************************************************** -->
+
+
+	<!-- ********************************************************************************************** -->
+	<!-- ********************************************************************************************** -->
+	<!-- ********************************************************************************************** -->
+
+	<!-- ********************************************************************************************** -->
+	<!-- ********************************************************************************************** -->
+	<!-- ********************************************************************************************** -->
 
 </div>
 {% endblock %}

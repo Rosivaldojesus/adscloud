@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import tbCliente, tbEquipamento,tbArtigos, tbManuais, tbPreventivas, tbSenhasPadroes, tbWework
 from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
@@ -56,10 +56,12 @@ def clienteEquipamentosInformacoes(request):
     return render(request, 'clienteEquipamentosInformacoes.html', {'equipamento':equipamento})
 
 def dashboard(request):
+    # Faz a contagam de equipamentos cadastrados por sistemas
+    # qnt_equi_cftv = tbEquipamento.objects.filter(manualSistema=2).count()
+    qnt_equi_cftv = tbEquipamento.objects.filter(equipamentoSistema = 2).count()
 
 
-
-    return render(request, 'dashboard.html')
+    return render(request, 'dashboard.html',{'qnt_equi_cftv':qnt_equi_cftv})
 
 
 def manuaisFabricantes(request):
