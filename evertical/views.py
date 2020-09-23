@@ -63,7 +63,11 @@ def dashboard(request):
     qnt_equi_sap = tbEquipamento.objects.filter(equipamentoSistema=5).count()
     qnt_equi_sdai = tbEquipamento.objects.filter(equipamentoSistema=6).count()
     # Quantidade de administradora
-    qnt_bbz = tbCliente.objects.filter(clienteAdministradora= 1).count(),
+    qnt_bbz = tbCliente.objects.filter(clienteAdministradora= 1).count()
+    qnt_cbre = tbCliente.objects.filter(clienteAdministradora=2).count()
+    qnt_bbz = tbCliente.objects.filter(clienteAdministradora=1).count()
+    qnt_bbz = tbCliente.objects.filter(clienteAdministradora=1).count()
+    qnt_bbz = tbCliente.objects.filter(clienteAdministradora=1).count()
 
 
     return render(request, 'dashboard.html',{
@@ -75,6 +79,8 @@ def dashboard(request):
                                                 'qnt_equi_sdai':qnt_equi_sdai,
                                             # Quantidade de administradora
                                             'qnt_bbz': qnt_bbz,
+                                             'qnt_cbre': qnt_cbre,
+
                                                  })
 
 
