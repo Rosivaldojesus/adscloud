@@ -68,6 +68,25 @@ def dashboard(request):
     qnt_bbz = tbCliente.objects.filter(clienteAdministradora=1).count()
     qnt_bbz = tbCliente.objects.filter(clienteAdministradora=1).count()
     qnt_bbz = tbCliente.objects.filter(clienteAdministradora=1).count()
+    # Quantidade de equipamento por cliente
+    atrium_VII = tbEquipamento.objects.filter(cliente=1).count()
+    birmann31 = tbEquipamento.objects.filter(cliente=2).count()
+    capitalCenter = tbEquipamento.objects.filter(cliente=3).count()
+    eTower = tbEquipamento.objects.filter(cliente=4).count()
+    eenu = tbEquipamento.objects.filter(cliente=5).count()
+    hlFariaLima = tbEquipamento.objects.filter(cliente=6).count()
+    jk360 = tbEquipamento.objects.filter(cliente=7).count()
+    jardimPamplonaShopping = tbEquipamento.objects.filter(cliente=8).count()
+    morumbiPlaza = tbEquipamento.objects.filter(cliente=9).count()
+    paulista1100 = tbEquipamento.objects.filter(cliente=10).count()
+    pinacoteca = tbEquipamento.objects.filter(cliente=11).count()
+    shoppingGrandPlaza = tbEquipamento.objects.filter(cliente=11).count()
+    shoppingGranjaVianna = tbEquipamento.objects.filter(cliente=12).count()
+    shoppingIguatemiAlphaville = tbEquipamento.objects.filter(cliente=13).count()
+    skyCorporate = tbEquipamento.objects.filter(cliente=14).count()
+    vistaFariaLima = tbEquipamento.objects.filter(cliente=15).count()
+    workBelaCintra = tbEquipamento.objects.filter(cliente=16).count()
+    iguatemiAlphaville = tbEquipamento.objects.filter(cliente=17).count()
 
 
     return render(request, 'dashboard.html',{
@@ -80,6 +99,25 @@ def dashboard(request):
                                             # Quantidade de administradora
                                             'qnt_bbz': qnt_bbz,
                                              'qnt_cbre': qnt_cbre,
+                                            # Quantidade de administradora
+                                            # Quantidade de equipmantos por cliente
+                                            'atrium_VII': atrium_VII,
+                                            'birmann31': birmann31,
+                                            'capitalCenter': capitalCenter,
+                                            'eTower': eTower,
+                                            'eenu': eenu,
+                                            'hlFariaLima': hlFariaLima,
+                                            'morumbiPlaza': morumbiPlaza,
+                                            'jardimPamplonaShopping': jardimPamplonaShopping,
+                                            'jk360': jk360,
+                                            'paulista1100': paulista1100,
+                                            'pinacoteca': pinacoteca,
+                                            'shoppingGrandPlaza': shoppingGrandPlaza,
+                                            'shoppingGranjaVianna': shoppingGranjaVianna,
+                                            'skyCorporate': skyCorporate,
+                                            'workBelaCintra': workBelaCintra,
+                                            'vistaFariaLima': vistaFariaLima,
+                                            'shoppingIguatemiAlphaville': shoppingIguatemiAlphaville,
 
                                                  })
 
