@@ -57,11 +57,22 @@ def clienteEquipamentosInformacoes(request):
 
 def dashboard(request):
     # Faz a contagam de equipamentos cadastrados por sistemas
-    # qnt_equi_cftv = tbEquipamento.objects.filter(manualSistema=2).count()
     qnt_equi_cftv = tbEquipamento.objects.filter(equipamentoSistema = 2).count()
+    qnt_equi_sai = tbEquipamento.objects.filter(equipamentoSistema=3).count()
+    qnt_equi_sca = tbEquipamento.objects.filter(equipamentoSistema=4).count()
+    qnt_equi_sap = tbEquipamento.objects.filter(equipamentoSistema=5).count()
+    qnt_equi_sdai = tbEquipamento.objects.filter(equipamentoSistema=6).count()
 
 
-    return render(request, 'dashboard.html',{'qnt_equi_cftv':qnt_equi_cftv})
+    return render(request, 'dashboard.html',{
+
+                                            'qnt_equi_cftv':qnt_equi_cftv,
+                                             'qnt_equi_sai':qnt_equi_sai,
+                                              'qnt_equi_sca':qnt_equi_sca,
+                                               'qnt_equi_sap':qnt_equi_sap,
+                                                'qnt_equi_sdai':qnt_equi_sdai,
+
+                                                 })
 
 
 def manuaisFabricantes(request):
