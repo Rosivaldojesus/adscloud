@@ -16,8 +16,10 @@
 
 	<!-- ********************************************************************************************** -->
 	<section>
+
 		<!DOCTYPE html>
 		<html lang="en">
+
 		<head>
 			<meta charset="utf-8" />
 			<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -32,7 +34,9 @@
 				}
 			</style>
 		</head>
+
 		<body>
+
 			<div class="owl-carousel owl-theme">
 				<div class="item">
 					<a href="#" title="">
@@ -49,6 +53,7 @@
 						<img src="{% static "img/fabricantes/fb_03.png" %}" alt="">
 					</a>
 				</div>
+
 				<div class="item">
 					<a href="#" title="">
 						<img src="{% static "img/fabricantes/fb_05.png" %}" alt="">
@@ -64,7 +69,9 @@
 						<img src="{% static "img/fabricantes/fb_07.png" %}" alt="">
 					</a>
 				</div>
+
 			</div>
+
 			<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
@@ -88,8 +95,14 @@
 					}
 				})
 			</script>
+
 		</body>
+
+		</html>
+
+
 	</section>
+
 	<!-- ********************************************************************************************** -->
 
 		  <h2 class="border-bottom  border-info text-info">
@@ -97,10 +110,11 @@
                 <h2>Manuais</h2>
             </a>
 		  </h2>
-	      <h2 class="border-bottom  border-info text-info">
+	<h2 class="border-bottom  border-info text-info">
             <a class="card-link">
             </a>
-		  </h2>
+		 </h2>
+		
 
 
 <div class="card-group">
@@ -113,8 +127,10 @@
                             <svg width="5em" height="5em" viewBox="0 0 16 16" class="bi bi-file-earmark-minus-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" d="M2 2a2 2 0 0 1 2-2h5.293A1 1 0 0 1 10 .293L13.707 4a1 1 0 0 1 .293.707V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm7.5 1.5v-2l3 3h-2a1 1 0 0 1-1-1zM6 8.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1H6z"/>
                               </svg>
+
                         </a>
 					</div>
+
     </div>
   </div>
   <div class="card">
@@ -134,7 +150,7 @@
     <div class="card-body">
      <div class="img_manuais" align="center">
 		  <h3>Internos</h3>
-                        <a class="btn btn-outline-info" href="#" role="button">
+                        <a class="btn btn-outline-info" href="/manuaisInternos/" role="button">
                             <svg width="5em" height="5em" viewBox="0 0 16 16" class="bi bi-file-earmark-minus-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" d="M2 2a2 2 0 0 1 2-2h5.293A1 1 0 0 1 10 .293L13.707 4a1 1 0 0 1 .293.707V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm7.5 1.5v-2l3 3h-2a1 1 0 0 1-1-1zM6 8.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1H6z"/>
                               </svg>
@@ -145,6 +161,9 @@
     </div>
   </div>
 </div>
+
+
+
 	<!-- ********************************************************************************************** -->
 	<section>
 		 <h2 class="border-bottom  border-info text-info">
@@ -161,15 +180,16 @@
 
 
 
-
 		<div class="card" style=>
 		  <div class="card-body">
 			  {% for artigo in artigo %}
-			<h3 class="card-title">
-				<a href="#" class="card-link">{{ artigo.artigoTitulo }}</a>
-			</h3>
+			<h5 class="card-title">
+				<a href="/artigoVisualizacao/?id={{ artigo.id }}" class="card-link">{{ artigo.artigoTitulo }}</a>
+			</h5>
 			  <h5>
-				  <a href="#" class="card-subtitle mb-2 text-muted">{{ artigo.artigoTitulo }}</a>
+				  <a href="/artigoVisualizacao/?id={{ artigo.id }}" class="card-link">{{ artigo.artigoSubtitulo }}</a>
+
+				  <h6 class=""></h6>
 			  </h5>
 			  {% endfor %}
 			  <div align="right">
@@ -180,11 +200,68 @@
 	</section>
 	<br><br>
 	<!-- ********************************************************************************************** -->
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+		</div>
+
+
+	</section>
+
+	<!-- ********************************************************************************************** -->
+<!--	<section>-->
+<!--		<div class="container">-->
+<!--		  <h2 class="border-bottom  border-info text-info">-->
+<!--            <a class="font-weight-bold  ">-->
+<!--                <h2>Artigos</h2>-->
+<!--            </a>-->
+<!--		  </h2>-->
+<!--		</div>-->
+
+
+<!--		<div class="card shadow p-3 border-0">-->
+
+<!--				<div class="card-body">-->
+
+<!--					{% for artigo in artigo %}-->
+
+<!--				<h4 class="card-text">{{ artigo.artigoTitulo }}</h4>-->
+<!--				<a href="/artigoVisualizacao/?id={{ artigo.id }}">-->
+<!--					<h6>{{ artigo.artigoSubtitulo }}</h6>-->
+<!--				</a>-->
+<!--					{% endfor %}-->
+<!--					<div align="right">-->
+<!--						<h5><a href="/artigos/">Ver +</a></h5>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</div>-->
+
+
+
+<!--	</section>-->
+
+
+
 	<!-- ********************************************************************************************** -->
 	<!-- ********************************************************************************************** -->
-	<!-- ********************************************************************************************** -->
+	<!-- Sessão onde fica as opçoes de Artigos e Fórum -->
+
 
 	<br><br>
 	<!-- ********************************************************************************************** -->
+
+
+
     </div>
 {% endblock %}
