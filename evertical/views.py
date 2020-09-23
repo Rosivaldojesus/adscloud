@@ -62,16 +62,19 @@ def dashboard(request):
     qnt_equi_sca = tbEquipamento.objects.filter(equipamentoSistema=4).count()
     qnt_equi_sap = tbEquipamento.objects.filter(equipamentoSistema=5).count()
     qnt_equi_sdai = tbEquipamento.objects.filter(equipamentoSistema=6).count()
+    # Quantidade de administradora
+    qnt_bbz = tbCliente.objects.filter(clienteAdministradora= 1).count(),
 
 
     return render(request, 'dashboard.html',{
-
+                                            # Quantidade de manuais cadastrados
                                             'qnt_equi_cftv':qnt_equi_cftv,
                                              'qnt_equi_sai':qnt_equi_sai,
                                               'qnt_equi_sca':qnt_equi_sca,
                                                'qnt_equi_sap':qnt_equi_sap,
                                                 'qnt_equi_sdai':qnt_equi_sdai,
-
+                                            # Quantidade de administradora
+                                            'qnt_bbz': qnt_bbz,
                                                  })
 
 
