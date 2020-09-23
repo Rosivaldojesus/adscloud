@@ -114,7 +114,7 @@
             <a class="card-link">
             </a>
 		 </h2>
-		
+
 
 
 <div class="card-group">
@@ -187,12 +187,14 @@
 				<a href="/artigoVisualizacao/?id={{ artigo.id }}" class="card-link">{{ artigo.artigoTitulo }}</a>
 			</h5>
 			  <h5>
-				  <a href="/artigoVisualizacao/?id={{ artigo.id }}" class="card-link">{{ artigo.artigoSubtitulo }}</a>
+				  <a href="/artigoVisualizacao/?id={{ artigo.id }}" class="card-subtitle mb-2 text-muted">{{ artigo.artigoSubtitulo }}</a>
 
 				  <h6 class=""></h6>
 			  </h5>
+			  <br>
 			  {% endfor %}
 			  <div align="right">
+
 				<h5><a href="/artigos/">Ver +</a></h5>
 			</div>
 		  </div>
