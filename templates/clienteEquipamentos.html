@@ -4,7 +4,7 @@
 
 <div class="container-xl">
 	<section>
-		<table class="table">
+		<table class="table table-striped">
 			<thead class="thead-dark">
 				<tr>
 					<th><h5>Equipamento</h5></th>
@@ -26,7 +26,7 @@
 					<td><h5>{{ equipamento.equipamentoPassword }}</h5></td>
 					<td><h5>{{ equipamento.equipamentoQrCode }}</h5></td>
 <!--					<td><a href="/clienteEquipamentosInformacoes/?id={{ cliente.id }}">Mais</td>-->
-					<td><a href="/clienteEquipamentosInformacoes/?id={{ equipamento.id }}"><h5> Mais</h5></td>
+					<td><a href="/clienteEquipamentosInformacoes/?id={{ equipamento.id }}" class="btn btn-primary"><h5> Mais</h5></td>
 				</tr>
 			{% endfor %}
 			</tbody>
