@@ -3,29 +3,22 @@
 {% block content %}
 <div class="container-xl">
 	<section>
-		<table class="table">
-			<thead class="thead-dark">
-				<th><h5>Título</h5></th>
-				<th><h5>Painel</h5></th>
-				<th><h5>Mais</h5></th>
-			</thead>
-			<tbody>
-			<h5>{% for artigo in artigos %}</h5>
-					<tr>
-						<th><h5>{{ artigo.artigoTitulo }}</h5></th>
-						<th><h5>{{ artigo.artigoSubtitulo }}</h5></th>
-						<th><a href="/artigoVisualizacao/?id={{ artigo.id }}"><h5>Visualização</h5></th>
-					</tr>
-					{% endfor %}
-			</tbody>
-   		 </table>
+		<br>
+		{% for artigo in artigos %}
+	<div class="card">
+	  <h5 class="card-header">{{ artigo.artigoTitulo }}</h5>
+	  <div class="card-body">
+		<h5 class="card-title">{{ artigo.artigoSubtitulo }}</h5>
+<!--		<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>-->
+		  <div align="right">
+			  <h4>
+				  <a href="/artigoVisualizacao/?id={{ artigo.id }}" class="btn btn-primary">Ler</a>
+			  </h4>
+
+		  </div>
+	  </div>
+	</div>
+		{% endfor %}
 	</section>
-
-
-
-
-
-
-
 </div>
 {% endblock %}s

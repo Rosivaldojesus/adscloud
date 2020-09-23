@@ -160,38 +160,29 @@
 		</div>
 	</section>
 	<br><br>
-		<!-- ********************************************************************************************** -->
 	<!-- ********************************************************************************************** -->
 	<section>
-		<div class="container">
-		  <h2 class="border-bottom  border-info text-info">
-            <a class="font-weight-bold  ">
+
+		<div class="card bg-light mb-3">
+		  <div class="card-header">
+
                 <h2>Artigos</h2>
-            </a>
-		  </h2>
+		  </div>
+			{% for artigo in artigo %}
+		  <div class="card-body">
+			<h5 class="card-title">{{ artigo.artigoTitulo }}</h5>
+			<p class="card-text">{{ artigo.artigoSubtitulo }}</p>
+		  </div>
+			{% endfor %}
+			<div align="right">
+				<h5><a href="/artigos/">Ver +</a></h5>
+			</div>
 		</div>
 
 
-		<div class="card shadow p-3 border-0">
-
-				<div class="card-body">
-
-					{% for artigo in artigo %}
-
-				<h4 class="card-text">{{ artigo.artigoTitulo }}</h4>
-				<a href="/artigoVisualizacao/?id={{ artigo.id }}">
-					<h6>{{ artigo.artigoSubtitulo }}</h6>
-				</a>
-					{% endfor %}
-					<div align="right">
-						<h5><a href="/artigos/">Ver +</a></h5>
-					</div>
-				</div>
-			</div>
-
-
-
 	</section>
+
+	<!-- ********************************************************************************************** -->
 
 
 
