@@ -31,7 +31,7 @@ def artigoVisualizacao(request):
         return render(request,'artigoVisualizacao.html', {'artigo':artigo})
 
 def clientes(request):
-    clientes = tbCliente.objects.all()
+    clientes = tbCliente.objects.filter().order_by('clienteNome')
     dados = {'clientes': clientes}
     return render(request, 'clientes.html', dados)
 
@@ -56,7 +56,14 @@ def clienteEquipamentosInformacoes(request):
     return render(request, 'clienteEquipamentosInformacoes.html', {'equipamento':equipamento})
 
 def manuaisFabricantes(request):
-    manualFabricante = tbManuais.objects.all()
+    manualFabricante = tbManuais.objects.all().order_by('manualFabricante')
+    queryset = request.GET.get('q')
+    if queryset:
+        manualFabricante = tbManuais.objects.filter(
+            Q(manualNome__icontains=queryset) |
+            Q(manualDescricao__icontains=queryset) |
+            Q(manualFabricante__icontains=queryset)
+        )
     return render(request, 'manuaisFabricantes.html',{'manualFabricante':manualFabricante})
 
 def manuaisPreventivas(request):
