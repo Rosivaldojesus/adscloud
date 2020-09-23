@@ -3,14 +3,18 @@
 {% block content %}
 
 <div class="container-xl">
-    <table class="table">
+    <section>
+        <br>
+        <h2>Lista das Weworks</h2>
+        <br>
+    </section>
+    <section>
+        <table class="table">
         <thead class="thead-dark">
-            <th>Wework</th>
+            <th>Branch</th>
             <th>Painel</th>
             <th>Cidade</th>
             <th>Estado</th>
-<!--            <th>Opções</th>-->
-            <th></th>
         </thead>
         {% for wework in wework %}
         <tbody>
@@ -27,13 +31,10 @@
             <td>{{ wework.weworkSdai }}</td>
             <td>{{ wework.cidadewework }}</td>
             <td>{{ wework.ufwework }}</td>
-<!--            <td>-->
-<!--                <div class="btn btn-warning">-->
-<!--                    <a href="/weworkUpdate/{{ weworks.id }}">Editar</a>-->
-<!--                </div>-->
-<!--            </td>-->
         </tbody>
         {% endfor %}
     </table>
+    </section>
+
  </div>
 {% endblock %}
