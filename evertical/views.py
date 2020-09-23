@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import tbCliente, tbEquipamento,tbArtigos, tbManuais, tbPreventivas, tbSenhasPadroes, tbWework
 from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
+from django.db.models import Q
 
 
 # Create your views here.
@@ -13,6 +14,13 @@ def index(request):
 
 def artigos(request):
     artigos = tbArtigos.objects.all()
+    queryset = request.GET.get('q')
+    if queryset:
+        artigos = tbArtigos.objects.filter(
+            Q(artigoTitulo__icontains=queryset)|
+            Q(artigoSubtitulo__icontains=queryset)|
+            Q(artigoTexto__icontains=queryset)
+        )
     dados = {'artigos': artigos}
     return render(request, 'artigos.html', dados)
 
