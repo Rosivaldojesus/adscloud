@@ -55,6 +55,13 @@ def clienteEquipamentosInformacoes(request):
         equipamento = tbEquipamento.objects.get(id=equipamento)
     return render(request, 'clienteEquipamentosInformacoes.html', {'equipamento':equipamento})
 
+def dashboard(request):
+
+
+
+    return render(request, 'dashboard.html')
+
+
 def manuaisFabricantes(request):
     manualFabricante = tbManuais.objects.all().order_by('manualFabricante')
     queryset = request.GET.get('q')
