@@ -1,49 +1,51 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<div class="container">
-	<section>
+<div class="container-xl">
 		<br>
-		<div class="card-group" align="center">
-		  <div class="card">
-
-			<div class="card-body">
-			  <h5 class="card-title">CFTV</h5>
-			  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-			</div>
-		  </div>
-		  <div class="card">
-
-			<div class="card-body">
-			  <h5 class="card-title">SAI</h5>
-			  <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-			</div>
-		  </div>
-		  <div class="card">
-
-			<div class="card-body">
-			  <h5 class="card-title">SCA</h5>
-			  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-			</div>
-		  </div>
-
-
-			<div class="card">
-
-			<div class="card-body">
-			  <h5 class="card-title">SAP</h5>
-			  <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-			</div>
-		  </div>
-		  <div class="card">
-
-			<div class="card-body">
-			  <h5 class="card-title">SDAI</h5>
-			  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-			</div>
-		  </div>
+		<section>
+		<div>
+			<h2 class="border-bottom  border-info text-info">
+			  <a class="font-weight-bold  ">
+				  <h2>Quantidade de equipamentos cadastrados</h2>
+			  </a>
+			</h2>
 		</div>
-	<br>
+		<div class="card-deck">
+			<div class="card rounded bg-primary text-white border-0 shadow">
+				<div class="card-body ">
+					<h4 class="card-title" align="center">CFTV</h4>
+					<h4 class="card-title" align="center"><strong>{{ qnt_equi_cftv }}</strong></h4>
+				</div>
+			</div>
+			<div class="card rounded bg-secondary text-white border-0 shadow">
+				<div class="card-body" align="center">
+					<h4 class="card-title" align="center">SAI</h4>
+					<h4 class="card-title" align=""><strong>{{ qnt_equi_sai }}</strong></h4>
+				</div>
+			</div>
+			<div class="card rounded bg-success text-white border-0 shadow">
+				<div class="card-body">
+					<h4 class="card-title" align="center">SAP</h4>
+					<h4 class="card-title" align="center"><strong>{{ qnt_equi_sap }}</strong></h4>
+				</div>
+			</div>
+			<div class="card rounded bg-warning text-white border-0 shadow">
+				<div class="card-body">
+					<h4 class="card-title" align="center">SCA</h4>
+					<h4 class="card-title" align="center"><strong>{{ qnt_equi_sca }}</strong></h4>
+				</div>
+			</div>
+			<div class="card rounded bg-danger text-white border-0 shadow">
+				<div class="card-body">
+					<h4 class="card-title" align="center">SDAI</h4>
+					<h4 class="card-title" align="center"><strong>{{ qnt_equi_sdai }}</strong></h4>
+				</div>
+			</div>
+		</div>
 	</section>
+	<br>
+	<br>
+
 </div>
 {% endblock %}
