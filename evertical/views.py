@@ -91,11 +91,11 @@ def dashboard(request):
     iguatemiAlphaville = tbEquipamento.objects.filter(equipamentoCliente=17).count()
 
     # Faz a contagam de manuais cadastrados por sistemas
-    qnt_man_cftv = tbManuais.objects.filter(manualSistema=1).count()
-    qnt_man_sai = tbManuais.objects.filter(manualSistema=2).count()
-    qnt_man_sap = tbManuais.objects.filter(manualSistema=4).count()
-    qnt_man_sca = tbManuais.objects.filter(manualSistema=3).count()
-    qnt_man_sdai = tbManuais.objects.filter(manualSistema=5).count()
+    qnt_man_cftv = tbManuais.objects.filter(manualSistema=2).count()
+    qnt_man_sai = tbManuais.objects.filter(manualSistema=3).count()
+    qnt_man_sap = tbManuais.objects.filter(manualSistema=5).count()
+    qnt_man_sca = tbManuais.objects.filter(manualSistema=4).count()
+    qnt_man_sdai = tbManuais.objects.filter(manualSistema=6).count()
 
 
     return render(request, 'dashboard.html',{
@@ -149,7 +149,7 @@ def manuaisFabricantes(request):
         manualFabricante = tbManuais.objects.filter(
             Q(manualNome__icontains=queryset) |
             Q(manualDescricao__icontains=queryset)
-            
+
         )
     return render(request, 'manuaisFabricantes.html',{'manualFabricante':manualFabricante})
 
