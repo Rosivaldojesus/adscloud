@@ -65,9 +65,11 @@ def dashboard(request):
     # Quantidade de administradora
     qnt_bbz = tbCliente.objects.filter(clienteAdministradora= 1).count()
     qnt_cbre = tbCliente.objects.filter(clienteAdministradora=2).count()
-    qnt_bbz = tbCliente.objects.filter(clienteAdministradora=1).count()
-    qnt_bbz = tbCliente.objects.filter(clienteAdministradora=1).count()
-    qnt_bbz = tbCliente.objects.filter(clienteAdministradora=1).count()
+    qnt_carrefour = tbCliente.objects.filter(clienteAdministradora=3).count()
+    qnt_pina = tbCliente.objects.filter(clienteAdministradora=4).count()
+    qnt_ccp = tbCliente.objects.filter(clienteAdministradora=5).count()
+    qnt_saphyr = tbCliente.objects.filter(clienteAdministradora=6).count()
+    qnt_iguatemi = tbCliente.objects.filter(clienteAdministradora=7).count()
     # Quantidade de equipamento por cliente
     atrium_VII = tbEquipamento.objects.filter(equipamentoCliente=1).count()
     birmann31 = tbEquipamento.objects.filter(equipamentoCliente=2).count()
@@ -99,6 +101,11 @@ def dashboard(request):
                                             # Quantidade de administradora
                                             'qnt_bbz': qnt_bbz,
                                              'qnt_cbre': qnt_cbre,
+                                              'qnt_carrefour': qnt_carrefour,
+                                               'qnt_pina': qnt_pina,
+                                                 'qnt_ccp': qnt_ccp,
+                                                  'qnt_saphyr': qnt_saphyr,
+                                                   'qnt_iguatemi':qnt_iguatemi,
                                             # Quantidade de administradora
                                             # Quantidade de equipmantos por cliente
                                             'atrium_VII': atrium_VII,
