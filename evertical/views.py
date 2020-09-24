@@ -82,12 +82,12 @@ def dashboard(request):
     morumbiPlaza = tbEquipamento.objects.filter(equipamentoCliente=9).count()
     paulista1100 = tbEquipamento.objects.filter(equipamentoCliente=10).count()
     pinacoteca = tbEquipamento.objects.filter(equipamentoCliente=11).count()
-    shoppingGrandPlaza = tbEquipamento.objects.filter(equipamentoCliente=11).count()
-    shoppingGranjaVianna = tbEquipamento.objects.filter(equipamentoCliente=12).count()
-    shoppingIguatemiAlphaville = tbEquipamento.objects.filter(equipamentoCliente=13).count()
-    skyCorporate = tbEquipamento.objects.filter(equipamentoCliente=14).count()
-    vistaFariaLima = tbEquipamento.objects.filter(equipamentoCliente=15).count()
-    workBelaCintra = tbEquipamento.objects.filter(equipamentoCliente=16).count()
+    shoppingGrandPlaza = tbEquipamento.objects.filter(equipamentoCliente=12).count()
+    shoppingGranjaVianna = tbEquipamento.objects.filter(equipamentoCliente=13).count()
+    shoppingIguatemiAlphaville = tbEquipamento.objects.filter(equipamentoCliente=14).count()
+    skyCorporate = tbEquipamento.objects.filter(equipamentoCliente=15).count()
+    vistaFariaLima = tbEquipamento.objects.filter(equipamentoCliente=16).count()
+    workBelaCintra = tbEquipamento.objects.filter(equipamentoCliente=17).count()
     iguatemiAlphaville = tbEquipamento.objects.filter(equipamentoCliente=17).count()
 
     # Faz a contagam de manuais cadastrados por sistemas
