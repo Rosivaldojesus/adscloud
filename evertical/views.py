@@ -148,8 +148,8 @@ def manuaisFabricantes(request):
     if queryset:
         manualFabricante = tbManuais.objects.filter(
             Q(manualNome__icontains=queryset) |
-            Q(manualDescricao__icontains=queryset) |
-            Q(manualFabricante__icontains=queryset)
+            Q(manualDescricao__icontains=queryset)
+            
         )
     return render(request, 'manuaisFabricantes.html',{'manualFabricante':manualFabricante})
 
