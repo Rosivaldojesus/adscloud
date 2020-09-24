@@ -91,11 +91,11 @@ def dashboard(request):
     iguatemiAlphaville = tbEquipamento.objects.filter(equipamentoCliente=17).count()
 
     # Faz a contagam de manuais cadastrados por sistemas
-    qnt_man_cftv = tbEquipamento.objects.filter(equipamentoSistema=1).count()
-    qnt_man_sai = tbEquipamento.objects.filter(equipamentoSistema=2).count()
-    qnt_man_sap = tbEquipamento.objects.filter(equipamentoSistema=4).count()
-    qnt_man_sca = tbEquipamento.objects.filter(equipamentoSistema=3).count()
-    qnt_man_sdai = tbEquipamento.objects.filter(equipamentoSistema=6).count()
+    qnt_man_cftv = tbManuais.objects.filter(manualSistema=1).count()
+    qnt_man_sai = tbManuais.objects.filter(manualSistema=2).count()
+    qnt_man_sap = tbManuais.objects.filter(manualSistema=4).count()
+    qnt_man_sca = tbManuais.objects.filter(manualSistema=3).count()
+    qnt_man_sdai = tbManuais.objects.filter(manualSistema=5).count()
 
 
     return render(request, 'dashboard.html',{
