@@ -9,7 +9,7 @@
         <br>
     </section>
     <section>
-
+        {% for wework in wework %}
 		<div class="card">
 		  	<div class="card-body">
 
@@ -22,21 +22,29 @@
 								<path d="M2 11h1v1H2v-1zm2 0h1v1H4v-1zm-2 2h1v1H2v-1zm2 0h1v1H4v-1zm4-4h1v1H8V9zm2 0h1v1h-1V9zm-2 2h1v1H8v-1zm2 0h1v1h-1v-1zm2-2h1v1h-1V9zm0 2h1v1h-1v-1zM8 7h1v1H8V7zm2 0h1v1h-1V7zm2 0h1v1h-1V7zM8 5h1v1H8V5zm2 0h1v1h-1V5zm2 0h1v1h-1V5zm0-2h1v1h-1V3z"/>
 							</svg>
 						</td>
-						<td>{{ cliente.clienteCidade }}</td>
-						<td >
+						<td>
+                            <div align="center">
+                                SDAI:
+                                <h5>{{ wework.weworkSdai }}</h5>
+                            </div>
+                        </td>
+
+						<td>
 							<div align="center">
-								<a href="/clientesInformacoes/?id={{ cliente.id }}" class="btn btn-primary"><h5>Detalhes</h5></a>
+                                Cidade:
+								<h5>Detalhes</h5>
 							</div>
 						</td>
-						<td>
-							<div align="right">
-								<a href="/clienteEquipamentos/?id={{ cliente.id }}" class="btn btn-primary"><h5>Equipamentos</h5></a>
+                        <td>
+							<div align="center">
+								<a href="/clientesInformacoes/?id={{ cliente.id }}" class="btn btn-primary"><h5>Detalhes</h5></a>
 							</div>
 						</td>
 					</tr>
 				</table>
 		  	</div>
 		 </div>
+        {% endfor %}
 		<br>
 	</section>
  </div>
