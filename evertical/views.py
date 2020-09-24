@@ -146,7 +146,6 @@ def manuaisPreventivas(request):
     if queryset:
         manualPreventiva =  tbPreventivas.objects.filter(
             Q(preventivaEquipamento__icontains=queryset) |
-            Q(manualSistema__icontains=queryset) |
             Q(preventivaProcedimento__icontains=queryset)
         )
     return render(request, 'manuaisPreventivas.html', {'manualPreventiva':manualPreventiva})
