@@ -142,7 +142,7 @@ def manuaisFabricantes(request):
 
 def manuaisPreventivas(request):
     manualPreventiva = tbPreventivas.objects.all()
-    queryset = request.GET.get('')
+    queryset = request.GET.get('q')
     if queryset:
         manualPreventiva =  tbPreventivas.objects.filter(
             Q(preventivaEquipamento__icontains=queryset) |
