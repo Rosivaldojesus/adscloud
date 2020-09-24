@@ -31,15 +31,19 @@
 					<th>Fabricante</th>
 					<th>Sistema</th>
 					<th>Manual</th>
+					<th>Descrição</th>
 					<th>Baixar</th>
+
 				</tr>
 			</thead>
 			<tbody>
 				{% for manual in manualFabricante %}
 				<tr class="shadow-lg p-3 mb-5 bg-white rounded ">
-					<td>{{manual.manualNome}}</td>
+					<td>{{manual.manualFabricante}}</td>
 					<td>{{manual.manualSistema}}</td>
-					<td>{{manual.nome_manual}}</td>
+					<td>{{manual.manualNome}}</td>
+					<td>{{manual.manualDescricao}}</td>
+					
 					<td>
 						<a href="{{manual.manualLink }}" target="_blanko"><b>
 							<svg class="bi bi-cloud-download" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="  http://www.w3.org/2000/svg">
