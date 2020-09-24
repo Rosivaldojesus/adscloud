@@ -3,20 +3,28 @@
 {% block content %}
 
 <div class="container-xl">
+	<br>
+	<section id="BOTOES_FILTRO">
+        <form method="GET">
+            <div class="row">
+                <div class="form-group col-10">
+					<input type="search" class="form-control"
+						   placeholder="Informe o manual, fabricante ou descrição"
+						   name="q" value="{{ request.GET.q }}">
+                </div>
+                <div class="form-group col-2">
+                    <button class=" form-control btn-success">Pesquisar</button>
+				</div>
 
+            </div>
+        </form>
+    </section>
 	<section>
-        <br>
+
         <h2>Lista das Manutenções Preventivas</h2>
         <br>
     </section>
-<!--		<section>-->
-<!--		<div class="col-md-12">-->
-<!--			<div align="right" >-->
-<!--			  <a class="btn btn-primary" href="/manuaisFabricantesCreate/" role="button">Novo Manual</a>-->
-<!--			</div>-->
-<!--		</div>-->
 
-<!--	</section>-->
 
 	<section>
 		<table class="table">
