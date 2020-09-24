@@ -90,6 +90,13 @@ def dashboard(request):
     workBelaCintra = tbEquipamento.objects.filter(equipamentoCliente=16).count()
     iguatemiAlphaville = tbEquipamento.objects.filter(equipamentoCliente=17).count()
 
+    # Faz a contagam de manuais cadastrados por sistemas
+    qnt_man_cftv = tbEquipamento.objects.filter(tipo_de_sistema=1).count()
+    qnt_man_sai = tbEquipamento.objects.filter(tipo_de_sistema=2).count()
+    qnt_man_sap = tbEquipamento.objects.filter(tipo_de_sistema=4).count()
+    qnt_man_sca = tbEquipamento.objects.filter(tipo_de_sistema=3).count()
+    qnt_man_sdai = tbEquipamento.objects.filter(tipo_de_sistema=6).count()
+
 
     return render(request, 'dashboard.html',{
                                             # Quantidade de manuais cadastrados
@@ -98,6 +105,12 @@ def dashboard(request):
                                               'qnt_equi_sca':qnt_equi_sca,
                                                'qnt_equi_sap':qnt_equi_sap,
                                                 'qnt_equi_sdai':qnt_equi_sdai,
+                                            # Quantidade de manuais cadastrados
+                                            'qnt_man_cftv': qnt_man_cftv,
+                                            'qnt_man_sai': qnt_man_sai,
+                                            'qnt_man_sap': qnt_man_sap,
+                                            'qnt_man_sca': qnt_man_sca,
+                                            'qnt_man_sdai': qnt_man_sdai,
                                             # Quantidade de administradora
                                             'qnt_bbz': qnt_bbz,
                                              'qnt_cbre': qnt_cbre,
