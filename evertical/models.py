@@ -174,6 +174,7 @@ class tbWework(models.Model):
     weworkAndares = models.CharField(max_length=50, blank=True, null=True)
     weworkCondominio = models.CharField(max_length=100, blank=True, null=True)
     weworkSdai = models.ForeignKey(tbSistemaSdai, on_delete=models.CASCADE)
+    clienteCidade = models.ForeignKey(tbCidade, on_delete=models.CASCADE)
     class Meta:
         db_table = 'tbWework'
         verbose_name_plural = 'Weworks'
