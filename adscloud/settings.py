@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'ckeditor',
     # 'storages',
 
+
 ]
 
 MIDDLEWARE = [
@@ -133,7 +134,7 @@ django_heroku.settings(locals())
 
 
 #S3 BUCKETS CONFIG
-'''
+
 AWS_ACCESS_KEY_ID = 'AKIA2XIVGEYKDWIMBRGH'
 AWS_SECRET_ACCESS_KEY = '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'
 AWS_STORAGE_BUCKET_NAME = 'adscloud-media'
@@ -141,8 +142,8 @@ AWS_STORAGE_BUCKET_NAME = 'adscloud-media'
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-'''
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
 
 
 '''
