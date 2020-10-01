@@ -4,7 +4,7 @@
 
 <div class="container-xl">
 	<section>
-
+		{% for equipamento in equipamento %}-->
 		<div class="card border-secondary">
 		  <div class="card-header">{{ equipamento.equipamento }}</div>
 		  <div class="card-body text-secondary">
@@ -13,7 +13,7 @@
 			  <a href="/clienteEquipamentosInformacoes/?id={{ equipamento.id }}" class="btn btn-primary"><h5>Detalhes</h5></a>
 		  </div>
 		</div>
-
+		{% endfor %}
 	</section>
 
 
