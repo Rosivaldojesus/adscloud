@@ -4,36 +4,46 @@
 
 <div class="container-xl">
 	<section>
-		<table class="table table-striped">
-			<thead class="thead-dark">
-				<tr>
-					<th><h5>Equipamento</h5></th>
-					<th><h5>Sistema</h5></th>
-					<th><h5>QrCode</h5></th>
-					<th><h5>Opções</h5></th>
-
-
-				</tr>
-			</thead>
-			<tbody>
-			{% for equipamento in equipamento %}
-				<tr>
-					<td><h5>{{ equipamento.equipamento }}</h5></td>
-					<td><h5>{{ equipamento.equipamentoSistema }}</h5></td>
-					<td><h5>{{ equipamento.equipamentoQrCode }}</h5></td>
-<!--					<td><a href="/clienteEquipamentosInformacoes/?id={{ cliente.id }}">Mais</td>-->
-					<td><a href="/clienteEquipamentosInformacoes/?id={{ equipamento.id }}" class="btn btn-primary"><h5> Mais</h5></td>
-				</tr>
-			{% endfor %}
-			</tbody>
-		</table>
-
-
-
-
-
-
-
+		{% for equipamento in equipamento %}
+		<div class="card border-secondary mb-3" style="max-width: 18rem;">
+		  <div class="card-header">{{ equipamento.equipamentoSistema }}</div>
+		  <div class="card-body text-secondary">
+			<h5 class="card-title">{{ equipamento.equipamento }}</h5>
+			<p class="card-text">QrCode: {{ equipamento.equipamentoQrCode }}</p>
+		  </div>
+		</div>
+		{% endfor %}
 	</section>
+
+
+
+<!--	<section>-->
+<!--		<table class="table table-striped">-->
+<!--			<thead class="thead-dark">-->
+<!--				<tr>-->
+<!--					<th><h5>Equipamento</h5></th>-->
+<!--					<th><h5>Sistema</h5></th>-->
+<!--					<th><h5>QrCode</h5></th>-->
+<!--					<th><h5>Opções</h5></th>-->
+
+
+<!--				</tr>-->
+<!--			</thead>-->
+<!--			<tbody>-->
+<!--			{% for equipamento in equipamento %}-->
+<!--				<tr>-->
+<!--					<td><h5>{{ equipamento.equipamento }}</h5></td>-->
+<!--					<td><h5>{{ equipamento.equipamentoSistema }}</h5></td>-->
+<!--					<td><h5>{{ equipamento.equipamentoQrCode }}</h5></td>-->
+<!--&lt;!&ndash;					<td><a href="/clienteEquipamentosInformacoes/?id={{ cliente.id }}">Mais</td>&ndash;&gt;-->
+<!--					<td><a href="/clienteEquipamentosInformacoes/?id={{ equipamento.id }}" class="btn btn-primary"><h5> Mais</h5></td>-->
+<!--				</tr>-->
+<!--			{% endfor %}-->
+<!--			</tbody>-->
+<!--		</table>-->
+<!--	</section>-->
+
+
+
 </div>
 {% endblock %}
