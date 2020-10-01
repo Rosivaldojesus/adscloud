@@ -42,10 +42,15 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'evertical',
     'ckeditor',
-    # 'storages',
+    # 'crispy_forms',
+    'usuarios.apps.UsuariosConfig',
+
 
 
 ]
+
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -128,9 +133,17 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
 
+
 )
 
 django_heroku.settings(locals())
+
+
+#Configuração de Autenticação
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = 'login'
+LOGIN_URL = 'login'
 
 
 #S3 BUCKETS CONFIG
@@ -142,7 +155,7 @@ AWS_STORAGE_BUCKET_NAME = 'adscloud-media'
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
 
 
 

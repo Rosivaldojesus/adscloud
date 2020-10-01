@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content-model_header %}{% endblock %}
+
+{% block content %}
+<div class="container-xl">
+	<section>
+		<div align="center">
+            <br>
+		<h2>Autenticação</h2>
+            <hr><hr>
+		<br>
+        </div>
+	</section>
+	<section>
+		<form action="" method="POST">{% csrf_token %}
+
+<!--             {{ form }}-->
+
+            <div align="center">
+                <div>
+                <h5>Usuário: </h5>
+                {{ form.username }}
+                </div>
+                <div>
+                    <h5>Senha: </h5>
+                    {{ form.password }}
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-primary mt-3">Entrar</button>
+                </div>
+            </div>
+
+
+        </form>
+	</section>
+    <br><br>
+</div>
+{% endblock %}

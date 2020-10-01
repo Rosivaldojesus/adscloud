@@ -84,7 +84,9 @@ class tbSistemas(models.Model):
         db_table = 'tbSistemas'
         verbose_name_plural = 'Sistemas'
     def __str__(self):
-        return self.sistemasTipo
+        return "{} - {}".format(self.id, self.sistemasTipo)
+
+    # return "{} - {}".format(self.id, self.clienteNome)
 
 
 class tbArtigos(models.Model):
@@ -113,7 +115,7 @@ class tbCliente(models.Model):
         db_table = 'tbCliente'
         verbose_name_plural = 'Clientes'
     def __str__(self):
-        return self.clienteNome
+        return "{} - {}".format(self.id, self.clienteNome)
 
 
 class tbEquipamento(models.Model):
