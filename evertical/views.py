@@ -4,14 +4,20 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.db.models import Q
 
+#Controle de acesso na Views
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required, user_passes_test
+
 
 # Create your views here.
+@login_required(login_url='/login/')
 def index(request):
 
     artigo = tbArtigos.objects.all().order_by('-id')[:3]
 
     return render(request, 'index.html', {'artigo': artigo})
 
+@login_required(login_url='/login/')
 def artigos(request):
     artigos = tbArtigos.objects.all()
     queryset = request.GET.get('q')
@@ -24,17 +30,20 @@ def artigos(request):
     dados = {'artigos': artigos}
     return render(request, 'artigos.html', dados)
 
+@login_required(login_url='/login/')
 def artigoVisualizacao(request):
     artigo = request.GET.get('id')
     if artigo:
         artigo = tbArtigos.objects.get(id=artigo)
         return render(request,'artigoVisualizacao.html', {'artigo':artigo})
 
+@login_required(login_url='/login/')
 def clientes(request):
     clientes = tbCliente.objects.filter().order_by('clienteNome')
     dados = {'clientes': clientes}
     return render(request, 'clientes.html', dados)
 
+@login_required(login_url='/login/')
 def clientesInformacoes(request):
     cliente = request.GET.get('id')
     dados = {}
@@ -42,6 +51,7 @@ def clientesInformacoes(request):
         dados['cliente'] = tbCliente.objects.get(id=cliente)
     return render(request, 'clientesInformacoes.html', dados)
 
+@login_required(login_url='/login/')
 def clienteEquipamentos(request):
     equipamento = request.GET.get('id')
     dados = {}
@@ -49,12 +59,14 @@ def clienteEquipamentos(request):
         dados['equipamento'] = tbEquipamento.objects.filter(equipamentoCliente=equipamento)
     return render(request, 'clienteEquipamentos.html', dados)
 
+@login_required(login_url='/login/')
 def clienteEquipamentosInformacoes(request):
     equipamento = request.GET.get('id')
     if equipamento:
         equipamento = tbEquipamento.objects.get(id=equipamento)
     return render(request, 'clienteEquipamentosInformacoes.html', {'equipamento':equipamento})
 
+@login_required(login_url='/login/')
 def dashboard(request):
     # Faz a contagam de equipamentos cadastrados por sistemas
     qnt_equi_cftv = tbEquipamento.objects.filter(equipamentoSistema = 2).count()
@@ -142,6 +154,7 @@ def dashboard(request):
                                                  })
 
 
+@login_required(login_url='/login/')
 def manuaisFabricantes(request):
     manualFabricante = tbManuais.objects.all().order_by('manualFabricante')
     queryset = request.GET.get('q')
@@ -153,6 +166,7 @@ def manuaisFabricantes(request):
         )
     return render(request, 'manuaisFabricantes.html',{'manualFabricante':manualFabricante})
 
+@login_required(login_url='/login/')
 def manuaisPreventivas(request):
     manualPreventiva = tbPreventivas.objects.all()
     queryset = request.GET.get('q')
@@ -163,6 +177,7 @@ def manuaisPreventivas(request):
         )
     return render(request, 'manuaisPreventivas.html', {'manualPreventiva':manualPreventiva})
 
+@login_required(login_url='/login/')
 def manuaisPreventivasInformacoes(request):
     preventiva = request.GET.get('id')
     dados = {}
@@ -170,10 +185,12 @@ def manuaisPreventivasInformacoes(request):
         dados['preventiva'] = tbPreventivas.objects.get(id=preventiva)
     return render(request, 'manuaisPreventivasInformacoes.html', dados)
 
+@login_required(login_url='/login/')
 def senhasPadroes(request):
     senha = tbSenhasPadroes.objects.all()
     return render(request, 'senhasPadroes.html', {'senha':senha})
 
+@login_required(login_url='/login/')
 def wework(request):
     wework = tbWework.objects.all()
     return render(request, 'wework.html', {'wework':wework})
@@ -185,8 +202,10 @@ def weworkView(request):
         dados['wework'] = tbWework.objects.get(id=wework)
     return render(request, 'weworkView.html', dados)
 
+
 def base(request):
     return render(request, 'base.html')
+
 
 def model_header(request):
     return render(request, 'model-header.html')
