@@ -8,13 +8,14 @@
 		<div class="card border-secondary">
 		  <div class="card-header">{{ equipamento.equipamento }}</div>
 		  <div class="card-body text-secondary">
-			<h5 class="card-title">QrCode: {{ equipamento.equipamentoQrCode }} </h5>
+			<h6 class="card-title">QrCode: {{ equipamento.equipamentoQrCode }} </h6>
 			  <div align="right">
 				   <a href="/clienteEquipamentosInformacoes/?id={{ equipamento.id }}" class="btn btn-primary"><h5>Detalhes</h5></a>
 			  </div>
 
 		  </div>
 		</div>
+		<br>
 		{% endfor %}
 	</section>
 
