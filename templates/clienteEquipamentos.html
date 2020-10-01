@@ -4,16 +4,16 @@
 
 <div class="container-xl">
 	<section>
-		{% for equipamento in equipamento %}
-		<div class="card border-secondary mb-3" style="max-width: 18rem;">
+
+		<div class="card border-secondary">
 		  <div class="card-header">{{ equipamento.equipamento }}</div>
 		  <div class="card-body text-secondary">
 			<h5 class="card-title">QrCode: {{ equipamento.equipamentoQrCode }} </h5>
 <!--			<p class="card-text"></p>-->
-			  <a href="/clienteEquipamentosInformacoes/?id={{ equipamento.id }}" class="btn btn-primary"><h5> Mais</h5>
+			  <a href="/clienteEquipamentosInformacoes/?id={{ equipamento.id }}" class="btn btn-primary"><h5>Detalhes</h5></a>
 		  </div>
 		</div>
-		{% endfor %}
+
 	</section>
 
 
