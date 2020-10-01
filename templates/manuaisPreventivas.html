@@ -27,7 +27,8 @@
 
 
 	<section>
-		<table class="table-responsive-sm">
+	<div class="table-responsive-xl">
+		<table class="table">
 		   <thead class="thead-dark">
 			   <tr>
 				   <th>ID</th>
@@ -40,15 +41,16 @@
 			<tbody >
 				{% for preventiva in manualPreventiva %}
 				<tr class="shadow-lg p-3 mb-5 bg-white rounded ">
-					<th>{{ preventiva.id }}</th>
-					<th >{{ preventiva.preventivaEquipamento }}</th>
-					<th >{{ preventiva.manualSistema }}</th>
-					<th>{{ preventiva.preventivaTempo }} Min</th>
-					<th><a href="/manuaisPreventivasInformacoes/?id={{ preventiva.id }}" class="btn btn-primary">+ Infor</a></th>
+					<td>{{ preventiva.id }}</td>
+					<td>{{ preventiva.preventivaEquipamento }}</td>
+					<td>{{ preventiva.manualSistema }}</td>
+					<td>{{ preventiva.preventivaTempo }} Min</td>
+					<td><a href="/manuaisPreventivasInformacoes/?id={{ preventiva.id }}" class="btn btn-primary">+ Infor</a></td>
 				</tr>
 			</tbody>
 		{% endfor%}
 		</table>
+	</div>
 	</section>
 </div>
 {% endblock %}s
