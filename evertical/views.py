@@ -154,6 +154,13 @@ def dashboard(request):
                                                  })
 
 
+
+def manuais(request):
+    return render(request, 'manuais.html')
+
+def fabricantes(request):
+    return render(request, 'fabricantes.html')
+
 @login_required(login_url='/login/')
 def manuaisFabricantes(request):
     manualFabricante = tbManuais.objects.all().order_by('manualFabricante')
@@ -202,6 +209,9 @@ def weworkView(request):
         dados['wework'] = tbWework.objects.get(id=wework)
     return render(request, 'weworkView.html', dados)
 
+
+def brBanner(request):
+    return render(request, 'brBanner.html')
 
 def base(request):
     return render(request, 'base.html')
