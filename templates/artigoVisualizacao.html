@@ -5,16 +5,20 @@
 <div class="container-xl">
 	<section>
 		<br>
-		<div align="center">
+		<div align="center" style="color: purple">
 			<h1>{{ artigo.artigoTitulo }}</h1>
 		</div>
 		<br>
-		<div>
+		<div style="color: #825280">
 			<h4 align="center">{{ artigo.artigoSubtitulo }}</h4>
+		</div>
+		<br>
+		<div>
+			<p>{{ artigo.artigoTexto | safe }}</p>
 		</div>
 
 		<br>
-		<h6>{{ artigo.artigoTexto | safe }}</h6>
+
 	</section>
 	<br><br>
 </div>
