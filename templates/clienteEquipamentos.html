@@ -18,23 +18,56 @@
 
 <div class="container-xl">
 	<section>
-		<div style="color: purple">
-		{% for equipamento in equipamento %}
-		<div>
-		<div class="card border-secondary">
-		  <div class="card-header">{{ equipamento.equipamento }}</div>
-		  <div class="card-body text-secondary">
-			<h6 class="card-title">QrCode: {{ equipamento.equipamentoQrCode }} </h6>
-
-			  <div align="right">
-				  <button class="btn btn-outline" style="background-color: purple;color: white;">
-					  <a href="/clienteEquipamentosInformacoes/?id={{ equipamento.id }}">Detalhes</a>
-				  </button>
-			  </div>
-		  </div>
-		</div>
-		<br>
-		{% endfor %}
+		<h3 style="color: purple;">Lista de Equipamentos do Cliente</h3>
+				<table class="table table-striped">
+					<thead style="background-color: purple;color: white;">
+						<tr>
+							<th>Equipamento</th>
+							<th>Sistema</th>
+							<th>QrCode</th>
+							<th>Opções</th>
+						</tr>
+					</thead>
+					<tbody>
+					{% for equipamento in equipamento %}
+						<tr>
+							<td>{{ equipamento.equipamento }}</td>
+							<td>{{ equipamento.equipamentoSistema }}</td>
+							<td>{{ equipamento.equipamentoQrCode }}</td>
+							<td>
+								<div align="right">
+								  <button class="btn btn-outline" style="background-color: purple;color: white;">
+									  <a href="/clienteEquipamentosInformacoes/?id={{ equipamento.id }}">Detalhes</a>
+								  </button>
+							  </div>
+							</td>
+						</tr>
+					{% endfor %}
+					</tbody>
+				</table>
+			<br>
 	</section>
-</div>
+
+
+<!--<div class="container-xl">-->
+<!--	<section>-->
+<!--		<div style="color: purple">-->
+<!--		{% for equipamento in equipamento %}-->
+<!--		<div>-->
+<!--		<div class="card border-secondary">-->
+<!--		  <div class="card-header">{{ equipamento.equipamento }}</div>-->
+<!--		  <div class="card-body text-secondary">-->
+<!--			<h6 class="card-title">QrCode: {{ equipamento.equipamentoQrCode }} </h6>-->
+
+<!--			  <div align="right">-->
+<!--				  <button class="btn btn-outline" style="background-color: purple;color: white;">-->
+<!--					  <a href="/clienteEquipamentosInformacoes/?id={{ equipamento.id }}">Detalhes</a>-->
+<!--				  </button>-->
+<!--			  </div>-->
+<!--		  </div>-->
+<!--		</div>-->
+<!--		<br>-->
+<!--		{% endfor %}-->
+<!--	</section>-->
+<!--</div>-->
 {% endblock %}
