@@ -4,16 +4,20 @@
 
 <div class = "container-xl" >
     <br>
-    <div align="center">
+    <div align="center" style="color: purple">
         <h3>{{ equipamento.equipamento }}</h3>
     </div>
-    <h5><strong>Sistema:</strong> {{ equipamento.equipamentoSistema }}</h5>
-    <h5><strong>Login:</strong> {{ equipamento.equipamentoLogin }}</h5>
-    <h5><strong>Senha:</strong> {{ equipamento.equipamentoPassword }}</h5>
-    <h5><strong>QRcode:</strong> {{ equipamento.equipamentoQrCode }}</h5>
-    <br>
-    <h3><strong>INFORMAÇÕES ADICIONAIS:<strong></h3>
-        <h5>{{ equipamento.equipamentoObservacao | safe}}</h5>
+    <div style="color: #70606f">
+        <h6><strong>Sistema:</strong> {{ equipamento.equipamentoSistema }}</h6>
+        <h6><strong>Login:</strong> {{ equipamento.equipamentoLogin }}</h6>
+        <h6><strong>Senha:</strong> {{ equipamento.equipamentoPassword }}</h6>
+        <h6><strong>QRcode:</strong> {{ equipamento.equipamentoQrCode }}</h6>
+    </div>
+        <br>
+    <h5 style="color: purple"><strong>Informações:<strong></h5>
+    <hr>
+        <p>{{ equipamento.equipamentoObservacao | safe}}</p>
+
     <br><br>
 </div>
 {% endblock %}
