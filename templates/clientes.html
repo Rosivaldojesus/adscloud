@@ -34,7 +34,7 @@
 							</svg>
 				{{ cliente.clienteNome }}
 			</h5>
-			<p class="card-text">{{ cliente.clienteCidade }}</p>
+			<p class="card-text">{{ cliente.clienteCidade }} - {{ cliente.clienteCidade.cidadeEstado }}</p>
 			  <div>
 				  <button class="btn btn-outline" style="background-color: purple;color: white;">
 					  <a href="/clientesInformacoes/?id={{ cliente.id }}">Detalhes</a>
