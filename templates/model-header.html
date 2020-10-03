@@ -1,5 +1,23 @@
-<div class="bg-light">
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark"></nav>
+<style>
+	.banner {
+  background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(159,0,255,1) 50%, rgba(9,0,0,1) 100%)+;
+  color: white;
+}
+	.nomeSistema{
+	color: white;
+	}
+	.fundoBanner{
+		background: rgb(6,0,6);
+		background: linear-gradient(90deg, rgba(6,0,6,1) 0%, rgba(156,10,159,1) 50%, rgba(18,0,22,1) 100%);
+	}
+	.fonte{
+		font-size: 50px;
+		font-family: serif";
+	}
+}
+</style>
+<div class="bg-light" >
+
         <div class="container">
           <nav class="navbar navbar-expand-lg navbar-light bg-light ">
             {% if request.user.is_authenticated %}
