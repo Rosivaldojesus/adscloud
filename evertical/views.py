@@ -22,7 +22,7 @@ def index(request):
 
 @login_required(login_url='/login/')
 def artigos(request):
-    artigos = tbArtigos.objects.all().order_by('id')
+    artigos = tbArtigos.objects.all().order_by('-id')
     queryset = request.GET.get('q')
     if queryset:
         artigos = tbArtigos.objects.filter(
