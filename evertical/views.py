@@ -4,17 +4,20 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.db.models import Q
 
+# Controle de Forms
+from .forms import weworkForm
+
 #Controle de acesso na Views
-from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required, user_passes_test
+from django.contrib.auth.decorators import permission_required
+from django.contrib.auth.mixins import LoginRequiredMixin
+from braces.views import GroupRequiredMixin
 
 
 # Create your views here.
 @login_required(login_url='/login/')
 def index(request):
-
     artigo = tbArtigos.objects.all().order_by('-id')[:3]
-
     return render(request, 'index.html', {'artigo': artigo})
 
 @login_required(login_url='/login/')
@@ -198,9 +201,12 @@ def senhasPadroes(request):
     return render(request, 'senhasPadroes.html', {'senha':senha})
 
 @login_required(login_url='/login/')
+@permission_required('minha_aplicacao.pode_mudar_status')
 def wework(request):
     wework = tbWework.objects.all()
     return render(request, 'wework.html', {'wework':wework})
+
+@login_required(login_url='/login/')
 
 def weworkView(request):
     wework = request.GET.get('id')
@@ -208,6 +214,16 @@ def weworkView(request):
     if wework:
         dados['wework'] = tbWework.objects.get(id=wework)
     return render(request, 'weworkView.html', dados)
+
+def weworkUpdate(request, id=None):
+    wework = get_object_or_404(tbWework, id=id)
+    form = weworkForm(request.POST or None, instance=wework)
+    if form.is_valid():
+        obj = form.save()
+        obj.save()
+        return redirect('/wework/')
+    return render(request, "weworkUpdate.html", {'form': form})
+
 
 
 def brBanner(request):

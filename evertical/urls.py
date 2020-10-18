@@ -4,7 +4,7 @@ from .views import artigos, artigoVisualizacao
 from .views import clientes, clientesInformacoes, clienteEquipamentos, clienteEquipamentosInformacoes
 from .views import manuaisFabricantes, manuaisPreventivas, manuaisPreventivasInformacoes, manuais, fabricantes
 from .views import senhasPadroes, brBanner
-from .views import wework, weworkView
+from .views import wework, weworkView, weworkUpdate
 from .views import dashboard
 
 urlpatterns = [
@@ -33,5 +33,7 @@ urlpatterns = [
     path('senhasPadroes/', senhasPadroes),
 
     path('wework/', wework),
+    path('weworkUpdate/<int:id>', weworkUpdate),
     path('weworkView/', weworkView),
+
 ]

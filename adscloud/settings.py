@@ -43,10 +43,8 @@ INSTALLED_APPS = [
     'evertical',
     'ckeditor',
     # 'crispy_forms',
+    'widget_tweaks',
     'usuarios.apps.UsuariosConfig',
-
-
-
 ]
 
 

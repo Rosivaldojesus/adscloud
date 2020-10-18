@@ -184,3 +184,13 @@ class tbWework(models.Model):
         return self.wework
 
 
+# class tbCameraIp(models.Model):
+#     nomeCamera = models.CharField(max_length=255, blank=True, null=True)
+#     numeroCamera = models.IntegerField(blank=True, null=True)
+#     numeroIp = models.IntegerField(blank=True, null=True)
+#     cliente = models.ForeignKey(tbCliente, on_delete=models.CASCADE)
+#     class Meta:
+#         db_table = 'tbCameraIp'
+#         verbose_name_plural = 'Câmeras IP'
+#
+#     def __str__(self):
