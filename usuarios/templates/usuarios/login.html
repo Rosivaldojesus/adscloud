@@ -4,19 +4,6 @@
 
 {% block content %}
 <div class="container-xl">
-
-    {% if request.user.is_authenticated %}
-
-    <div align="center" style="color: red"><br>
-    <h5>Ops, ação não permitida!!!</h5>
-        <a>Este usuário não está habilitado para está ação.</a>
-        <br>
-        <a>Entre em contato com o administrador do sistema!!!</a>
-
-        <hr>
-    </div>
-
-
 	<section>
 		<div align="center">
             <br>
@@ -42,7 +29,6 @@
                 </div>
             </div>
         </form>
-        {% endif %}
 	</section>
     <br><br>
 </div>
