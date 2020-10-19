@@ -201,13 +201,12 @@ def senhasPadroes(request):
     return render(request, 'senhasPadroes.html', {'senha':senha})
 
 @login_required(login_url='/login/')
-@permission_required('minha_aplicacao.pode_mudar_status')
+# @permission_required('minha_aplicacao.pode_mudar_status')
 def wework(request):
     wework = tbWework.objects.all()
     return render(request, 'wework.html', {'wework':wework})
 
 @login_required(login_url='/login/')
-
 def weworkView(request):
     wework = request.GET.get('id')
     dados = {}
@@ -215,6 +214,8 @@ def weworkView(request):
         dados['wework'] = tbWework.objects.get(id=wework)
     return render(request, 'weworkView.html', dados)
 
+@login_required(login_url='/login/')
+@permission_required('minha_aplicacao.pode_mudar_status')
 def weworkUpdate(request, id=None):
     wework = get_object_or_404(tbWework, id=id)
     form = weworkForm(request.POST or None, instance=wework)

@@ -52,13 +52,15 @@
 							  </button>
 							</div>
 						</td>
-<!--						<td>-->
-<!--							<div align="right">-->
-<!--								<button class="btn" style="background-color: purple; color: white;">-->
-<!--								   <a href="/weworkUpdate/{{ wework.id }}">Editar</a>-->
-<!--							  </button>-->
-<!--							</div>-->
-<!--						</td>-->
+						{% if request.user.is_authenticated %}
+						<td>
+							<div align="right">
+								<button class="btn" style="background-color: purple; color: white;">
+								   <a href="/weworkUpdate/{{ wework.id }}">Editar</a>
+							  </button>
+							</div>
+						</td>
+						{% endif %}
 					</tr>
 				</table>
 		  	</div>
