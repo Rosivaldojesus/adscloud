@@ -2,13 +2,20 @@
 {% load static %}
 
 
-
 {% block content %}
-
-
-
-
 <div class="container-xl">
+
+    {% if request.user.is_authenticated %}
+
+    <div align="center" style="color: red"><br>
+    <h5>Ops, ação não permitida!!!</h5>
+        <a>Este usuário não está habilitado para está ação.</a>
+        <br>
+        <a>Entre em contato com o administrador do sistema!!!</a>
+
+        <hr>
+    </div>
+
 
 	<section>
 		<div align="center">
@@ -20,9 +27,7 @@
 	</section>
 	<section>
 		<form action="" method="POST">{% csrf_token %}
-
 <!--             {{ form }}-->
-
             <div align="center">
                 <div>
                 <h5>Usuário: </h5>
@@ -36,9 +41,8 @@
                     <button type="submit" class="btn btn-primary mt-3">Entrar</button>
                 </div>
             </div>
-
-
         </form>
+        {% endif %}
 	</section>
     <br><br>
 </div>
