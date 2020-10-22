@@ -6,9 +6,11 @@ from .views import manuaisFabricantes, manuaisPreventivas, manuaisPreventivasInf
 from .views import senhasPadroes, brBanner
 from .views import wework, weworkView, weworkUpdate
 from .views import dashboard
+from .views import scirp
 
 urlpatterns = [
     path('brBanner/', brBanner),
+
     path('', index),
     path('clientes/', clientes),
     path('base/', base),
@@ -35,5 +37,8 @@ urlpatterns = [
     path('wework/', wework),
     path('weworkUpdate/<int:id>', weworkUpdate),
     path('weworkView/', weworkView),
+
+
+    path('scirp/', scirp),
 
 ]

@@ -182,6 +182,34 @@ class tbWework(models.Model):
         verbose_name_plural = 'Weworks'
     def __str__(self):
         return self.wework
+# ------------------------------------------------------
+# --------------- Iguatemi Ribeirão Preto --------------
+# ------------------------------------------------------
+
+class tbSapScirp(models.Model):
+    quadroSap = models.CharField(max_length=50, blank=True, null=True)
+    GERENCIADORA = (
+        ("BCX_SUP_01", "BCX_SUP_01"),
+        ("BCX_SUP_02", "BCX_SUP_02"),
+        ("BCX_2SS_01", "BCX_2SS_01"),
+        ("NET_SUP_01", "NET_SUP_01"),
+        ("NET_2SS_01", "NET_2SS_01"),
+    )
+    gerenciadora = models.CharField(max_length=255, choices=GERENCIADORA)
+    STATUS =(
+        ("Online","Online"),
+        ("Offline","Offline"),
+    )
+    statusSap = models.CharField(max_length=50, choices=STATUS)
+    quantidadeControladoras = models.IntegerField(blank=True, null=True)
+    observacoesSap = RichTextField(blank=True, null=True)
+    class Meta:
+        db_table = 'tbSapScirp'
+        verbose_name_plural = 'Quadros SCIRP'
+    def __str__(self):
+        return self.quadroSap
+
+
 
 
 # class tbCameraIp(models.Model):

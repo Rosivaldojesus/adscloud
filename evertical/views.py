@@ -15,11 +15,16 @@ from braces.views import GroupRequiredMixin
 
 
 # Create your views here.
+# ===============================================================
+# -------------------- View de Index ----------------------------
+# ===============================================================
 @login_required(login_url='/login/')
 def index(request):
     artigo = tbArtigos.objects.all().order_by('-id')[:3]
     return render(request, 'index.html', {'artigo': artigo})
-
+# ===============================================================
+# --------------------- View de Artigos -------------------------
+# ===============================================================
 @login_required(login_url='/login/')
 def artigos(request):
     artigos = tbArtigos.objects.all().order_by('-id')
@@ -39,7 +44,9 @@ def artigoVisualizacao(request):
     if artigo:
         artigo = tbArtigos.objects.get(id=artigo)
         return render(request,'artigoVisualizacao.html', {'artigo':artigo})
-
+# ===============================================================
+# -------------------- View de Clientes -------------------------
+# ===============================================================
 @login_required(login_url='/login/')
 def clientes(request):
     clientes = tbCliente.objects.filter().order_by('clienteNome')
@@ -68,7 +75,9 @@ def clienteEquipamentosInformacoes(request):
     if equipamento:
         equipamento = tbEquipamento.objects.get(id=equipamento)
     return render(request, 'clienteEquipamentosInformacoes.html', {'equipamento':equipamento})
-
+# ===============================================================
+# ------------------- View de Dashboard -------------------------
+# ===============================================================
 @login_required(login_url='/login/')
 def dashboard(request):
     # Faz a contagam de equipamentos cadastrados por sistemas
@@ -153,11 +162,10 @@ def dashboard(request):
                                             'workBelaCintra': workBelaCintra,
                                             'vistaFariaLima': vistaFariaLima,
                                             'shoppingIguatemiAlphaville': shoppingIguatemiAlphaville,
-
                                                  })
-
-
-
+# ===============================================================
+# ------------------ View de Manuais ----------------------------
+# ===============================================================
 def manuais(request):
     return render(request, 'manuais.html')
 
@@ -172,7 +180,6 @@ def manuaisFabricantes(request):
         manualFabricante = tbManuais.objects.filter(
             Q(manualNome__icontains=queryset) |
             Q(manualDescricao__icontains=queryset)
-
         )
     return render(request, 'manuaisFabricantes.html',{'manualFabricante':manualFabricante})
 
@@ -194,12 +201,16 @@ def manuaisPreventivasInformacoes(request):
     if preventiva:
         dados['preventiva'] = tbPreventivas.objects.get(id=preventiva)
     return render(request, 'manuaisPreventivasInformacoes.html', dados)
-
+# ===============================================================
+# ---------------- View de Senhas Padrões -----------------------
+# ===============================================================
 @login_required(login_url='/login/')
 def senhasPadroes(request):
     senha = tbSenhasPadroes.objects.all()
     return render(request, 'senhasPadroes.html', {'senha':senha})
-
+# ===============================================================
+# ------------------ View de Wework -----------------------------
+# ===============================================================
 @login_required(login_url='/login/')
 # @permission_required('minha_aplicacao.pode_mudar_status')
 def wework(request):
@@ -224,15 +235,21 @@ def weworkUpdate(request, id=None):
         obj.save()
         return redirect('/wework/')
     return render(request, "weworkUpdate.html", {'form': form})
-
-
-
+# ===============================================================
+# -------------------View de Complementos------------------------
+# ===============================================================
+# ===============================================================
+# ===============================================================
+def scirp(request):
+    return render(request, 'scirp.html')
+# ===============================================================
+# ===============================================================
+# ===============================================================
 def brBanner(request):
     return render(request, 'brBanner.html')
 
 def base(request):
     return render(request, 'base.html')
-
 
 def model_header(request):
     return render(request, 'model-header.html')
