@@ -242,8 +242,14 @@ def weworkUpdate(request, id=None):
 # ===============================================================
 # ===============================================================
 def scirp(request):
+    qnt_online = tbSapScirp.objects.filter(statusSap='Online').count()
+
     controladoras = tbSapScirp.objects.all()
-    return render(request, 'scirp.html', {'controladoras':controladoras})
+
+    return render(request, 'scirp.html', {'controladoras':controladoras,
+                                          'qnt_online':qnt_online,
+
+                                          })
 # ===============================================================
 # ===============================================================
 # ===============================================================
