@@ -3,7 +3,6 @@
 {% block content %}
 
 
-
 <div class="container-xl">
 	<section>
 		<br>
@@ -28,7 +27,29 @@
 	Inicio dos conteúdos de SAP
 ---------------------------------------------------------------------------------------------
 -->
-		  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
+		  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+			<section>
+				<div class="table-responsive-xl">
+					  <table class="table table-striped">
+					<thead style="background-color: purple;color: white;">
+						<th>Quadro</th>
+						<th>Gerenciadora</th>
+						<th>Status</th>
+
+					</thead>
+					{% for control in controladoras %}
+						<tbody>
+							<td>{{ control.quadroSap }}</td>
+							<td>{{ control.gerenciadora }}</td>
+							<td>{{ control.statusSap }}</td>
+
+						</tbody>
+					{% endfor %}
+					</table>
+				</div>
+
+				</section>
+		  </div>
 			<!--
 ---------------------------------------------------------------------------------------------
 	Inicio dos conteúdos de CFTV

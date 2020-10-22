@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import tbCliente, tbEquipamento,tbArtigos, tbManuais, tbPreventivas, tbSenhasPadroes, tbWework
+from .models import tbSapScirp
 from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.db.models import Q
@@ -241,7 +242,8 @@ def weworkUpdate(request, id=None):
 # ===============================================================
 # ===============================================================
 def scirp(request):
-    return render(request, 'scirp.html')
+    controladoras = tbSapScirp.objects.all()
+    return render(request, 'scirp.html', {'controladoras':controladoras})
 # ===============================================================
 # ===============================================================
 # ===============================================================
