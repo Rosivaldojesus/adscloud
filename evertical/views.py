@@ -49,12 +49,14 @@ def artigoVisualizacao(request):
 # -------------------- View de Clientes -------------------------
 # ===============================================================
 @login_required(login_url='/login/')
+@permission_required('master')
 def clientes(request):
     clientes = tbCliente.objects.filter().order_by('clienteNome')
     dados = {'clientes': clientes}
     return render(request, 'clientes.html', dados)
 
 @login_required(login_url='/login/')
+@permission_required('master')
 def clientesInformacoes(request):
     cliente = request.GET.get('id')
     dados = {}
@@ -63,6 +65,7 @@ def clientesInformacoes(request):
     return render(request, 'clientesInformacoes.html', dados)
 
 @login_required(login_url='/login/')
+@permission_required('master')
 def clienteEquipamentos(request):
     equipamento = request.GET.get('id')
     dados = {}
@@ -71,6 +74,7 @@ def clienteEquipamentos(request):
     return render(request, 'clienteEquipamentos.html', dados)
 
 @login_required(login_url='/login/')
+@permission_required('master')
 def clienteEquipamentosInformacoes(request):
     equipamento = request.GET.get('id')
     if equipamento:
@@ -80,6 +84,7 @@ def clienteEquipamentosInformacoes(request):
 # ------------------- View de Dashboard -------------------------
 # ===============================================================
 @login_required(login_url='/login/')
+@permission_required('master')
 def dashboard(request):
     # Faz a contagam de equipamentos cadastrados por sistemas
     qnt_equi_cftv = tbEquipamento.objects.filter(equipamentoSistema = 2).count()
@@ -213,12 +218,13 @@ def senhasPadroes(request):
 # ------------------ View de Wework -----------------------------
 # ===============================================================
 @login_required(login_url='/login/')
-# @permission_required('minha_aplicacao.pode_mudar_status')
+@permission_required('master')
 def wework(request):
     wework = tbWework.objects.all()
     return render(request, 'wework.html', {'wework':wework})
 
 @login_required(login_url='/login/')
+@permission_required('master')
 def weworkView(request):
     wework = request.GET.get('id')
     dados = {}
@@ -227,7 +233,7 @@ def weworkView(request):
     return render(request, 'weworkView.html', dados)
 
 @login_required(login_url='/login/')
-@permission_required('weworkAdmin')
+@permission_required('master')
 def weworkUpdate(request, id=None):
     wework = get_object_or_404(tbWework, id=id)
     form = weworkForm(request.POST or None, instance=wework)
