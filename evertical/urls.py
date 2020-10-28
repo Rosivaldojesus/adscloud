@@ -7,8 +7,12 @@ from .views import senhasPadroes, brBanner
 from .views import wework, weworkView, weworkUpdate
 from .views import dashboard
 from .views import scirp
+from .views import pro
 
 urlpatterns = [
+    path('pro/', pro),
+
+
     path('brBanner/', brBanner),
 
     path('', index),

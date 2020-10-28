@@ -1,0 +1,42 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+	<section>
+		{% include "pro-model-header.html" %}
+	</section>
+
+
+	<!-- ********************************************************************************************** -->
+	<section>
+		{% include "brBanner.html" %}
+	</section>
+	<br>
+	<!--********************************************************************************************** -->
+	<section>
+		{% include "indexManuais.html" %}
+	</section>
+	<br>
+	<!-- ********************************************************************************************** -->
+	<section>
+		{% include "indexArtigos.html" %}
+	</section>
+	<br>
+	<!-- ********************************************************************************************** -->
+	<!-- ********************************************************************************************** -->
+	<section>
+		{% include "indexSenhas.html" %}
+	</section>
+	<br>
+
+
+
+<div class="container-xl">
+
+
+</div>
+{% endblock %}
