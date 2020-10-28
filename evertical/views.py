@@ -233,7 +233,7 @@ def weworkView(request):
     return render(request, 'weworkView.html', dados)
 
 @login_required(login_url='/login/')
-@permission_required('master')
+@permission_required('master', 'weworkAdmin')
 def weworkUpdate(request, id=None):
     wework = get_object_or_404(tbWework, id=id)
     form = weworkForm(request.POST or None, instance=wework)

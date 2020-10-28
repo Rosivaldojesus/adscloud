@@ -62,7 +62,7 @@
                   </a>
                 </li>
                   {% endif %}
-                  {% if request.user.is_authenticated and request.user.is_master %}
+                  {% if request.user.groups.all.0.name == "master" %}
                 <li class="nav-item">
                   <a class="nav-link" href="/dashboard/" style="color: #825280">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-bar-chart" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -109,7 +109,7 @@
                   </a>
                 </li>
                   {% endif %}
-                  {% if request.user.is_authenticated and request.user.is_master %}
+                  {% if request.user.groups.all.0.name == "master" %}
                 <li class="nav-item">
                   <a class="nav-link" href="/wework/" style="color: #825280">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-receipt-cutoff" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -118,7 +118,7 @@
                     </svg>
                     Wework
                   </a>
-                </li>z
+                </li>
                   {% endif %}
                   {% if request.user.is_authenticated %}
                         <li class="nav-item dropdown" >
