@@ -180,11 +180,11 @@ def fabricantes(request):
 
 @login_required(login_url='/login/')
 def manuaisFabricantes(request):
-    manuaisCftv = tbManuais.objects.filter(manualSistema=1)
-    manuaisSai = tbManuais.objects.filter(manualSistema=2)
-    manuaisSap = tbManuais.objects.filter(manualSistema=3)
+    manuaisCftv = tbManuais.objects.filter(manualSistema=2)
+    manuaisSai = tbManuais.objects.filter(manualSistema=3)
+    manuaisSap = tbManuais.objects.filter(manualSistema=5)
     manuaisSca = tbManuais.objects.filter(manualSistema=4)
-    manuaisSdai =  tbManuais.objects.filter(manualSistema=5)
+    manuaisSdai =  tbManuais.objects.filter(manualSistema=6)
 
     # manualFabricante = tbManuais.objects.all().order_by('manualFabricante')
     # queryset = request.GET.get('q')
