@@ -180,14 +180,26 @@ def fabricantes(request):
 
 @login_required(login_url='/login/')
 def manuaisFabricantes(request):
-    manualFabricante = tbManuais.objects.all().order_by('manualFabricante')
-    queryset = request.GET.get('q')
-    if queryset:
-        manualFabricante = tbManuais.objects.filter(
-            Q(manualNome__icontains=queryset) |
-            Q(manualDescricao__icontains=queryset)
-        )
-    return render(request, 'manuaisFabricantes.html',{'manualFabricante':manualFabricante})
+    manuaisCftv = tbManuais.objects.filter(manualSistema=1)
+    manuaisSai = tbManuais.objects.filter(manualSistema=2)
+    manuaisSap = tbManuais.objects.filter(manualSistema=3)
+    manuaisSca = tbManuais.objects.filter(manualSistema=4)
+    manuaisSdai =  tbManuais.objects.filter(manualSistema=5)
+
+    # manualFabricante = tbManuais.objects.all().order_by('manualFabricante')
+    # queryset = request.GET.get('q')
+    # if queryset:
+    #     manualFabricante = tbManuais.objects.filter(
+    #         Q(manualNome__icontains=queryset) |
+    #         Q(manualDescricao__icontains=queryset)
+    #     )
+    return render(request, 'manuaisFabricantes.html',{
+                                                      'manuaisCftv': manuaisCftv,
+                                                      'manuaisSai':manuaisSai,
+                                                      ' manuaisSap': manuaisSap,
+                                                      'manuaisSca':manuaisSca ,
+                                                      'manuaisSdai':manuaisSdai,
+                                                      })
 
 @login_required(login_url='/login/')
 def manuaisPreventivas(request):
