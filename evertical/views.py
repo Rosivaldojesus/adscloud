@@ -49,7 +49,7 @@ def artigoVisualizacao(request):
 # -------------------- View de Clientes -------------------------
 # ===============================================================
 @login_required(login_url='/login/')
-@permission_required('master')
+
 def clientes(request):
     clientes = tbCliente.objects.filter().order_by('clienteNome')
     dados = {'clientes': clientes}
@@ -259,18 +259,10 @@ def scirp(request):
 
                                           })
 # ===============================================================
-@login_required(login_url='/login/')
-@permission_required('master')
-def pro(request):
-    return render(request, 'pro.html')
-
 # ===============================================================
 # ===============================================================
 def brBanner(request):
     return render(request, 'brBanner.html')
-
-def indexManuais(request):
-    return render(request, 'indexManuais.html')
 
 def base(request):
     return render(request, 'base.html')

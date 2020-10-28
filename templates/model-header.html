@@ -50,7 +50,8 @@
                   </a>
                 </li>
                   {% endif %}
-                  {% if user.groups.master %}
+                  {% if request.user.groups.all.0.name == "master" %}
+
                 <li class="nav-item">
                   <a class="nav-link" href="/clientes/" style="color: #825280">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-building" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -117,9 +118,8 @@
                     </svg>
                     Wework
                   </a>
-                </li>
+                </li>z
                   {% endif %}
-
                   {% if request.user.is_authenticated %}
                         <li class="nav-item dropdown" >
                           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: purple">
@@ -154,13 +154,6 @@
                             </a>
                           </div>
                         </li>
-                       <div align="center">
-                          <li class="nav-item">
-                          <a class="nav-link" href="/pro/" style="color: #825280">
-                            <button type="button" class="btn btn-warning"><strong>Premium</strong></button>
-                          </a>
-                        </li>
-                       </div>
                         {% else %}
                                       <li class="nav-item">
                                           <a class="nav-link" href="/login/">
