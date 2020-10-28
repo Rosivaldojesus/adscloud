@@ -119,6 +119,7 @@
                   </a>
                 </li>
                   {% endif %}
+
                   {% if request.user.is_authenticated %}
                         <li class="nav-item dropdown" >
                           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: purple">
@@ -153,6 +154,13 @@
                             </a>
                           </div>
                         </li>
+                       <div align="center">
+                          <li class="nav-item">
+                          <a class="nav-link" href="/pro/" style="color: #825280">
+                            <button type="button" class="btn btn-warning"><strong>Premium</strong></button>
+                          </a>
+                        </li>
+                       </div>
                         {% else %}
                                       <li class="nav-item">
                                           <a class="nav-link" href="/login/">
