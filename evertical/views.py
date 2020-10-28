@@ -49,7 +49,7 @@ def artigoVisualizacao(request):
 # -------------------- View de Clientes -------------------------
 # ===============================================================
 @login_required(login_url='/login/')
-
+@permission_required('master')
 def clientes(request):
     clientes = tbCliente.objects.filter().order_by('clienteNome')
     dados = {'clientes': clientes}
