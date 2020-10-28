@@ -259,7 +259,8 @@ def scirp(request):
 
                                           })
 # ===============================================================
-
+@login_required(login_url='/login/')
+@permission_required('master')
 def pro(request):
     return render(request, 'pro.html')
 
