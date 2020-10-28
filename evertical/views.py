@@ -185,8 +185,6 @@ def manuaisFabricantes(request):
     manuaisSap = tbManuais.objects.filter(manualSistema=5)
     manuaisSca = tbManuais.objects.filter(manualSistema=4)
     manuaisSdai =  tbManuais.objects.filter(manualSistema=6)
-
-    manuaisSdai = tbManuais.objects.all().order_by('manualFabricante')
     queryset = request.GET.get('q')
     if queryset:
         manuaisSdai = tbManuais.objects.filter(
