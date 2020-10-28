@@ -5,277 +5,7 @@
 	<!-- ********************************************************************************************** -->
 	<!-- ********************************************************************************************** -->
 	<!-- ********************************************************************************************** -->
-<!--	<section>-->
-<!--		<br>-->
-<!--      <form method="GET">-->
-<!--			<div class="row">-->
-<!--				<div class="form-group col-10">-->
-<!--					<input type="search" class="form-control"-->
-<!--						   placeholder="Informe o manual, fabricante ou descrição"-->
-<!--						   name="q" value="{{ request.GET.q }}">-->
-<!--				</div>-->
-<!--				<div class="form-group">-->
-<!--					<button class=" form-control btn-success">-->
-<!--						<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">-->
-<!--						  <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>-->
-<!--						  <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>-->
-<!--						</svg>-->
-<!--					</button>-->
-<!--				</div>-->
-<!--			</div>-->
-<!--		</form>-->
-<!--	</section>-->
-	<!-- ********************************************************************************************** -->
-	<!-- ********************************************************************************************** -->
-	<!-- ********************************************************************************************** -->
-<!--	<section>-->
-<!--		<h3 style="color: purple">Manuais de Fabricantes</h3>-->
-<!--	<div class="table-responsive-xl">-->
-<!--		<table class="table table-striped">-->
-<!--			<thead style="background-color: purple;color: white;">-->
-<!--				<tr>-->
-<!--					<th>Fabricante</th>-->
-<!--					<th>Sistema</th>-->
-<!--					<th>Manual</th>-->
-<!--					<th>Descrição</th>-->
-<!--					<th>Baixar</th>-->
-
-<!--				</tr>-->
-<!--			</thead>-->
-<!--			<tbody>-->
-<!--				{% for manual in manualFabricante %}-->
-<!--				<tr class="shadow-lg p-3 mb-5 bg-white rounded ">-->
-<!--					<td>{{manual.manualFabricante}}</td>-->
-<!--					<td>{{manual.manualSistema}}</td>-->
-<!--					<td>{{manual.manualNome}}</td>-->
-<!--					<td>{{manual.manualDescricao}}</td>-->
-
-<!--					<td>-->
-<!--						<a href="{{manual.manualLink }}" target="_blanko"><b>-->
-<!--							<svg class="bi bi-cloud-download" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="  http://www.w3.org/2000/svg">-->
-<!--								<path d="M4.887 5.2l-.964-.165A2.5 2.5 0 1 0 3.5 10H6v1H3.5a3.5 3.5 0 1 1 .59-6.95 5.002 5.002 0 1 1 9.804 1.98A2.501 2.501 0 0 1 13.5 11H10v-1h3.5a1.5 1.5 0 0 0 .237-2.981L12.7 6.854l.216-1.028a4 4 0 1 0-7.843-1.587l-.185.96z"/>-->
-<!--								<path fill-rule="evenodd" d="M5 12.5a.5.5 0 0 1 .707 0L8 14.793l2.293-2.293a.5.5 0 1 1 .707.707l-2.646 2.646a.5.5 0 0 1-.708 0L5 13.207a.5.5 0 0 1 0-.707z"/>-->
-<!--								<path fill-rule="evenodd" d="M8 6a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0v-8A.5.5 0 0 1 8 6z"/>-->
-<!--							</svg>-->
-<!--							<b>-->
-<!--						</a>-->
-<!--					</td>-->
-<!--				</tr>-->
-<!--				{% endfor %}-->
-<!--			</tbody>-->
-<!--		</table>-->
-<!--	</div>-->
-<!--	</section>-->
-	<!-- ********************************************************************************************** -->
-	<!-- ********************************************************************************************** -->
-	<ul class="nav nav-tabs" id="myTab" role="tablist">
-  <li class="nav-item" role="presentation">
-    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">CFTV</a>
-  </li>
-  <li class="nav-item" role="presentation">
-    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">SAI</a>
-  </li>
-  <li class="nav-item" role="presentation">
-    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">SAP</a>
-  </li>
-
-   <li class="nav-item" role="presentation">
-    <a class="nav-link" id="contac-tab" data-toggle="tab" href="#contac" role="tab" aria-controls="contac" aria-selected="false">SCA</a>
-  </li>
-
- <li class="nav-item" role="presentation">
-    <a class="nav-link" id="conta-tab" data-toggle="tab" href="#conta" role="tab" aria-controls="conta" aria-selected="false">SDAI</a>
-  </li>
-
-</ul>
-<div class="tab-content" id="myTabContent">
-<!--
------------------------------------------------------------------------------------------------------
-                                        Circuito Fechado de TV
------------------------------------------------------------------------------------------------------
--->
-  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 	<section>
-		<br>
-				<h5 style="color: purple">Circuito Fechado de TV</h5>
-		<br>
-			<div class="table-responsive-xl">
-				<table class="table table-striped">
-					<thead style="background-color: purple;color: white;">
-						<tr>
-							<th>Fabricante</th>
-							<th>Manual</th>
-							<th>Descrição</th>
-							<th>Baixar</th>
-
-						</tr>
-					</thead>
-					<tbody>
-						{% for manual in manuaisCftv %}
-						<tr class="shadow-lg p-3 mb-5 bg-white rounded ">
-							<td>{{manual.manualFabricante}}</td>
-							<td>{{manual.manualNome}}</td>
-							<td>{{manual.manualDescricao}}</td>
-
-							<td>
-								<a href="{{manual.manualLink }}" target="_blanko"><b>
-									<svg class="bi bi-cloud-download" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="  http://www.w3.org/2000/svg">
-										<path d="M4.887 5.2l-.964-.165A2.5 2.5 0 1 0 3.5 10H6v1H3.5a3.5 3.5 0 1 1 .59-6.95 5.002 5.002 0 1 1 9.804 1.98A2.501 2.501 0 0 1 13.5 11H10v-1h3.5a1.5 1.5 0 0 0 .237-2.981L12.7 6.854l.216-1.028a4 4 0 1 0-7.843-1.587l-.185.96z"/>
-										<path fill-rule="evenodd" d="M5 12.5a.5.5 0 0 1 .707 0L8 14.793l2.293-2.293a.5.5 0 1 1 .707.707l-2.646 2.646a.5.5 0 0 1-.708 0L5 13.207a.5.5 0 0 1 0-.707z"/>
-										<path fill-rule="evenodd" d="M8 6a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0v-8A.5.5 0 0 1 8 6z"/>
-									</svg>
-									<b>
-								</a>
-							</td>
-						</tr>
-						{% endfor %}
-					</tbody>
-				</table>
-	        </div>
-	    </section>
-  </div>
-<!--
------------------------------------------------------------------------------------------------------
- Sistema de Alarme de Intrusão
------------------------------------------------------------------------------------------------------
--->
-  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-	<section>
-		<br>
-				<h5 style="color: purple">Sistema de Alarme de Intrusão</h5>
-		<br>
-			<div class="table-responsive-xl">
-				<table class="table table-striped">
-					<thead style="background-color: purple;color: white;">
-						<tr>
-							<th>Fabricante</th>
-							<th>Manual</th>
-							<th>Descrição</th>
-							<th>Baixar</th>
-
-						</tr>
-					</thead>
-					<tbody>
-						{% for manual in manuaisSai %}
-						<tr class="shadow-lg p-3 mb-5 bg-white rounded ">
-							<td>{{manual.manualFabricante}}</td>
-							<td>{{manual.manualNome}}</td>
-							<td>{{manual.manualDescricao}}</td>
-
-							<td>
-								<a href="{{manual.manualLink }}" target="_blanko"><b>
-									<svg class="bi bi-cloud-download" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="  http://www.w3.org/2000/svg">
-										<path d="M4.887 5.2l-.964-.165A2.5 2.5 0 1 0 3.5 10H6v1H3.5a3.5 3.5 0 1 1 .59-6.95 5.002 5.002 0 1 1 9.804 1.98A2.501 2.501 0 0 1 13.5 11H10v-1h3.5a1.5 1.5 0 0 0 .237-2.981L12.7 6.854l.216-1.028a4 4 0 1 0-7.843-1.587l-.185.96z"/>
-										<path fill-rule="evenodd" d="M5 12.5a.5.5 0 0 1 .707 0L8 14.793l2.293-2.293a.5.5 0 1 1 .707.707l-2.646 2.646a.5.5 0 0 1-.708 0L5 13.207a.5.5 0 0 1 0-.707z"/>
-										<path fill-rule="evenodd" d="M8 6a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0v-8A.5.5 0 0 1 8 6z"/>
-									</svg>
-									<b>
-								</a>
-							</td>
-						</tr>
-						{% endfor %}
-					</tbody>
-				</table>
-	        </div>
-	    </section>
-  
-  </div>
-<!--
------------------------------------------------------------------------------------------------------
-Sistema de Automação Predial
------------------------------------------------------------------------------------------------------
--->
-  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-	<section>
-		<br>
-				<h5 style="color: purple">Sistema de Automação Predial</h5>
-		<br>
-			<div class="table-responsive-xl">
-				<table class="table table-striped">
-					<thead style="background-color: purple;color: white;">
-						<tr>
-							<th>Fabricante</th>
-							<th>Manual</th>
-							<th>Descrição</th>
-							<th>Baixar</th>
-
-						</tr>
-					</thead>
-					<tbody>
-						{% for manual in manuaisSap %}
-						<tr class="shadow-lg p-3 mb-5 bg-white rounded ">
-							<td>{{manual.manualFabricante}}</td>
-							<td>{{manual.manualNome}}</td>
-							<td>{{manual.manualDescricao}}</td>
-
-							<td>
-								<a href="{{manual.manualLink }}" target="_blanko"><b>
-									<svg class="bi bi-cloud-download" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="  http://www.w3.org/2000/svg">
-										<path d="M4.887 5.2l-.964-.165A2.5 2.5 0 1 0 3.5 10H6v1H3.5a3.5 3.5 0 1 1 .59-6.95 5.002 5.002 0 1 1 9.804 1.98A2.501 2.501 0 0 1 13.5 11H10v-1h3.5a1.5 1.5 0 0 0 .237-2.981L12.7 6.854l.216-1.028a4 4 0 1 0-7.843-1.587l-.185.96z"/>
-										<path fill-rule="evenodd" d="M5 12.5a.5.5 0 0 1 .707 0L8 14.793l2.293-2.293a.5.5 0 1 1 .707.707l-2.646 2.646a.5.5 0 0 1-.708 0L5 13.207a.5.5 0 0 1 0-.707z"/>
-										<path fill-rule="evenodd" d="M8 6a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0v-8A.5.5 0 0 1 8 6z"/>
-									</svg>
-									<b>
-								</a>
-							</td>
-						</tr>
-						{% endfor %}
-					</tbody>
-				</table>
-	        </div>
-	    </section>
-  </div>
-<!--
------------------------------------------------------------------------------------------------------
-Sistema de Controle de Acesso
------------------------------------------------------------------------------------------------------
--->
-  <div class="tab-pane fade" id="contac" role="tabpanel" aria-labelledby="contact-tab">
-	<section>
-		<br>
-				<h5 style="color: purple">Sistema de Controle de Acesso</h5>
-		<br>
-			<div class="table-responsive-xl">
-				<table class="table table-striped">
-					<thead style="background-color: purple;color: white;">
-						<tr>
-							<th>Fabricante</th>
-							<th>Manual</th>
-							<th>Descrição</th>
-							<th>Baixar</th>
-
-						</tr>
-					</thead>
-					<tbody>
-						{% for manual in manuaisSca %}
-						<tr class="shadow-lg p-3 mb-5 bg-white rounded ">
-							<td>{{manual.manualFabricante}}</td>
-							<td>{{manual.manualNome}}</td>
-							<td>{{manual.manualDescricao}}</td>
-
-							<td>
-								<a href="{{manual.manualLink }}" target="_blanko"><b>
-									<svg class="bi bi-cloud-download" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="  http://www.w3.org/2000/svg">
-										<path d="M4.887 5.2l-.964-.165A2.5 2.5 0 1 0 3.5 10H6v1H3.5a3.5 3.5 0 1 1 .59-6.95 5.002 5.002 0 1 1 9.804 1.98A2.501 2.501 0 0 1 13.5 11H10v-1h3.5a1.5 1.5 0 0 0 .237-2.981L12.7 6.854l.216-1.028a4 4 0 1 0-7.843-1.587l-.185.96z"/>
-										<path fill-rule="evenodd" d="M5 12.5a.5.5 0 0 1 .707 0L8 14.793l2.293-2.293a.5.5 0 1 1 .707.707l-2.646 2.646a.5.5 0 0 1-.708 0L5 13.207a.5.5 0 0 1 0-.707z"/>
-										<path fill-rule="evenodd" d="M8 6a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0v-8A.5.5 0 0 1 8 6z"/>
-									</svg>
-									<b>
-								</a>
-							</td>
-						</tr>
-						{% endfor %}
-					</tbody>
-				</table>
-	        </div>
-	    </section>
-  </div>
-<!--
------------------------------------------------------------------------------------------------------
-Sistema de Detecção e Alarme de Incêndio
------------------------------------------------------------------------------------------------------
--->
-		<section>
 		<br>
       <form method="GET">
 			<div class="row">
@@ -295,50 +25,49 @@ Sistema de Detecção e Alarme de Incêndio
 			</div>
 		</form>
 	</section>
+	<!-- ********************************************************************************************** -->
+	<!-- ********************************************************************************************** -->
+	<!-- ********************************************************************************************** -->
+	<section>
+		<h3 style="color: purple">Manuais de Fabricantes</h3>
+	<div class="table-responsive-xl">
+		<table class="table table-striped">
+			<thead style="background-color: purple;color: white;">
+				<tr>
+					<th>Fabricante</th>
+					<th>Sistema</th>
+					<th>Manual</th>
+					<th>Descrição</th>
+					<th>Baixar</th>
 
+				</tr>
+			</thead>
+			<tbody>
+				{% for manual in manualFabricante %}
+				<tr class="shadow-lg p-3 mb-5 bg-white rounded ">
+					<td>{{manual.manualFabricante}}</td>
+					<td>{{manual.manualSistema}}</td>
+					<td>{{manual.manualNome}}</td>
+					<td>{{manual.manualDescricao}}</td>
 
-
-
-  <div class="tab-pane fade" id="conta" role="tabpanel" aria-labelledby="contact-tab">
- 	    <section>
-			<br>
-				<h5 style="color: purple">Sistema de Detecção e Alarme de Incêndio</h5>
-			<br>
-			<div class="table-responsive-xl">
-				<table class="table table-striped">
-					<thead style="background-color: purple;color: white;">
-						<tr>
-							<th>Fabricante</th>
-							<th>Manual</th>
-							<th>Descrição</th>
-							<th>Baixar</th>
-
-						</tr>
-					</thead>
-					<tbody>
-						{% for manual in manuaisSdai %}
-						<tr class="shadow-lg p-3 mb-5 bg-white rounded ">
-							<td>{{manual.manualFabricante}}</td>
-							<td>{{manual.manualNome}}</td>
-							<td>{{manual.manualDescricao}}</td>
-
-							<td>
-								<a href="{{manual.manualLink }}" target="_blanko"><b>
-									<svg class="bi bi-cloud-download" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="  http://www.w3.org/2000/svg">
-										<path d="M4.887 5.2l-.964-.165A2.5 2.5 0 1 0 3.5 10H6v1H3.5a3.5 3.5 0 1 1 .59-6.95 5.002 5.002 0 1 1 9.804 1.98A2.501 2.501 0 0 1 13.5 11H10v-1h3.5a1.5 1.5 0 0 0 .237-2.981L12.7 6.854l.216-1.028a4 4 0 1 0-7.843-1.587l-.185.96z"/>
-										<path fill-rule="evenodd" d="M5 12.5a.5.5 0 0 1 .707 0L8 14.793l2.293-2.293a.5.5 0 1 1 .707.707l-2.646 2.646a.5.5 0 0 1-.708 0L5 13.207a.5.5 0 0 1 0-.707z"/>
-										<path fill-rule="evenodd" d="M8 6a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0v-8A.5.5 0 0 1 8 6z"/>
-									</svg>
-									<b>
-								</a>
-							</td>
-						</tr>
-						{% endfor %}
-					</tbody>
-				</table>
-	        </div>
-	    </section>
-    </div>
+					<td>
+						<a href="{{manual.manualLink }}" target="_blanko"><b>
+							<svg class="bi bi-cloud-download" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="  http://www.w3.org/2000/svg">
+								<path d="M4.887 5.2l-.964-.165A2.5 2.5 0 1 0 3.5 10H6v1H3.5a3.5 3.5 0 1 1 .59-6.95 5.002 5.002 0 1 1 9.804 1.98A2.501 2.501 0 0 1 13.5 11H10v-1h3.5a1.5 1.5 0 0 0 .237-2.981L12.7 6.854l.216-1.028a4 4 0 1 0-7.843-1.587l-.185.96z"/>
+								<path fill-rule="evenodd" d="M5 12.5a.5.5 0 0 1 .707 0L8 14.793l2.293-2.293a.5.5 0 1 1 .707.707l-2.646 2.646a.5.5 0 0 1-.708 0L5 13.207a.5.5 0 0 1 0-.707z"/>
+								<path fill-rule="evenodd" d="M8 6a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0v-8A.5.5 0 0 1 8 6z"/>
+							</svg>
+							<b>
+						</a>
+					</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+	</section>
+	<!-- ********************************************************************************************** -->
+	<!-- ********************************************************************************************** -->
 	<!-- ********************************************************************************************** -->
 </div>
 {% endblock %}s
