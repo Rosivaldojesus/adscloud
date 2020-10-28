@@ -1,0 +1,37 @@
+<div class="container-xl">
+	<section>
+		 <h2 class="border-bottom text-info">
+            <a class="card-link">
+                <h3 style="color: purple">Artigos</h3>
+            </a>
+		 </h2>
+		<h2 class="border-bottom  border text-info">
+            <a class="card-link">
+            </a>
+		 </h2>
+		<div class="card" style=>
+			<div class="card-body">
+				{% for artigo in artigo %}
+				<h2 class="border-bottom   text-info">
+					<a class="card-link">
+					</a>
+				</h2>
+				<h5 class="card-title">
+					<a href="/artigoVisualizacao/?id={{ artigo.id }}" class="card-link" style="color: #825280">{{ artigo.artigoTitulo }}</a>
+				</h5>
+				<div>
+					<a href="/artigoVisualizacao/?id={{ artigo.id }}" class="card-subtitle mb-2 text-muted">{{ artigo.artigoSubtitulo }}</a>
+				</div>
+				<br>
+				{% endfor %}
+				<h2 class="border-bottom  text-info">
+					<a class="card-link">
+					</a>
+				</h2>
+				<div align="right" >
+					<h6 ><a href="/artigos/" style="color: #825280">+ Artigos</a></h6>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>

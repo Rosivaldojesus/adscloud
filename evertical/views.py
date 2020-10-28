@@ -264,6 +264,9 @@ def scirp(request):
 def brBanner(request):
     return render(request, 'brBanner.html')
 
+def indexManuais(request):
+    return render(request, 'indexManuais.html')
+
 def base(request):
     return render(request, 'base.html')
 
