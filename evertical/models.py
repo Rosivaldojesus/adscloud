@@ -235,17 +235,17 @@ class tbCameraIp(models.Model):
     loginCamera = models.CharField(max_length=20, blank=True, null=True)
     senhaCamera = models.CharField(max_length=20, blank=True, null=True)
     EQUIPAMENTO_GRAVACAO = (
-        ("DVR1", "DVR1"),
-        ("DVR2", "DVR2"),
-        ("DVR3", "DVR3"),
+        ("DVR 1", "DVR 1"),
+        ("DVR 2", "DVR 2"),
+        ("DVR 3", "DVR 3"),
 
-        ("NVR1", "NVR1"),
-        ("NVR2", "NVR2"),
-        ("NVR3", "NVR3"),
+        ("NVR 1", "NVR 1"),
+        ("NVR 2", "NVR 2"),
+        ("NVR 3", "NVR 3"),
 
-        ("VAU1", "VAU1"),
-        ("VAU2", "VAU2"),
-        ("VAU3", "VAU3"),
+        ("VAU 1", "VAU 1"),
+        ("VAU 2", "VAU 2"),
+        ("VAU 3", "VAU 3"),
     )
     equipamentoGravacao = models.CharField(max_length=50, choices=EQUIPAMENTO_GRAVACAO)
     cliente = models.ForeignKey(tbCliente, on_delete=models.CASCADE)
