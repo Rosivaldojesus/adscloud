@@ -102,7 +102,30 @@
 	Inicio dos conteúdos de CFTV
 ---------------------------------------------------------------------------------------------
 -->
-		  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+		  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+			<section>
+				<div class="table-responsive-xl">
+					  <table class="table table-striped">
+					<thead style="background-color: purple;color: white;">
+						<th>Câmera</th>
+						<th>IP</th>
+						<th>Fabricante</th>
+
+					</thead>
+					{% for camera in camerasScirp %}
+						<tbody>
+							<td>{{ camera.nomeCamera }}</td>
+							<td>{{ camera.numeroIp }}</td>
+							<td>{{ camera.fabricanteCamera }}</td>
+
+						</tbody>
+					{% endfor %}
+					</table>
+				</div>
+
+				</section>
+
+			  </div>
 			<!--
 ---------------------------------------------------------------------------------------------
 	Inicio dos conteúdos de SDAI

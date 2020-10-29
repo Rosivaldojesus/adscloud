@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import tbCliente, tbEquipamento,tbArtigos, tbManuais, tbPreventivas, tbSenhasPadroes, tbWework
-from .models import tbSapScirp
+from .models import tbSapScirp, tbCameraIp
 from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.db.models import Q
@@ -251,11 +251,14 @@ def scirp(request):
     qnt_online = tbSapScirp.objects.filter(statusSap='Online').count()
     qnt_offline = tbSapScirp.objects.filter(statusSap='Offline').count()
 
+    camerasScirp = tbCameraIp.objects.filter(cliente=18)
+
     controladoras = tbSapScirp.objects.all()
 
     return render(request, 'scirp.html', {'controladoras':controladoras,
                                           'qnt_online':qnt_online,
                                           'qnt_offline': qnt_offline,
+                                          'camerasScirp': camerasScirp,
 
                                           })
 # ===============================================================

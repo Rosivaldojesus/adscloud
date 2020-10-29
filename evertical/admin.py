@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import tbCliente, tbCidade, tbAdministradora, tbSistemaCftv, tbSistemaSai, tbSistemaSca, \
     tbSistemaSap, tbSistemaSdai, tbPreventivas, tbSenhasPadroes, tbEquipamento, tbWework, tbSistemas, \
-    tbFabricante, tbManuais, tbArtigos, tbSapScirp
+    tbFabricante, tbManuais, tbArtigos, tbSapScirp, tbCameraIp
 
 # Register your models here.
 class tbClienteAdmin(admin.ModelAdmin):
@@ -28,3 +28,4 @@ admin.site.register(tbManuais)
 admin.site.register(tbArtigos)
 
 admin.site.register(tbSapScirp)
+admin.site.register(tbCameraIp)

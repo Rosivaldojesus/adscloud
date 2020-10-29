@@ -222,3 +222,36 @@ class tbSapScirp(models.Model):
 #         verbose_name_plural = 'Câmeras IP'
 #
 #     def __str__(self):
+
+class tbCameraIp(models.Model):
+    nomeCamera = models.CharField(max_length=255, blank=True, null=True)
+    numeroCamera = models.IntegerField(blank=True, null=True)
+    numeroIp = models.CharField(max_length=20,blank=True, null=True)
+    FABRICANTE_CAMERA = (
+        ("Axis", "Axis"),
+        ("Interlbras", "Intelbras"),
+    )
+    fabricanteCamera = models.CharField(max_length=255, choices=FABRICANTE_CAMERA)
+    loginCamera = models.CharField(max_length=20, blank=True, null=True)
+    senhaCamera = models.CharField(max_length=20, blank=True, null=True)
+    EQUIPAMENTO_GRAVACAO = (
+        ("DVR1", "DVR1"),
+        ("DVR2", "DVR2"),
+        ("DVR3", "DVR3"),
+
+        ("NVR1", "NVR1"),
+        ("NVR2", "NVR2"),
+        ("NVR3", "NVR3"),
+
+        ("VAU1", "VAU1"),
+        ("VAU2", "VAU2"),
+        ("VAU3", "VAU3"),
+    )
+    equipamentoGravacao = models.CharField(max_length=50, choices=EQUIPAMENTO_GRAVACAO)
+    cliente = models.ForeignKey(tbCliente, on_delete=models.CASCADE)
+    class Meta:
+        db_table = 'tbCameraIp'
+        verbose_name_plural = 'Câmeras IP'
+
+    def __str__(self):
+        return self.nomeCamera
