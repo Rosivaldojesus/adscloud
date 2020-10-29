@@ -250,17 +250,19 @@ def weworkUpdate(request, id=None):
 def scirp(request):
     qnt_online = tbSapScirp.objects.filter(statusSap='Online').count()
     qnt_offline = tbSapScirp.objects.filter(statusSap='Offline').count()
-
     camerasScirp = tbCameraIp.objects.filter(cliente=18)
-
     controladoras = tbSapScirp.objects.all()
-
     return render(request, 'scirp.html', {'controladoras':controladoras,
                                           'qnt_online':qnt_online,
                                           'qnt_offline': qnt_offline,
                                           'camerasScirp': camerasScirp,
 
                                           })
+
+
+def scirpCftv(request):
+    camerasScirp = tbCameraIp.objects.filter(cliente=18)
+    return render(request, 'scirpCftv.html', {'camerasScirp': camerasScirp})
 # ===============================================================
 # ===============================================================
 # ===============================================================
