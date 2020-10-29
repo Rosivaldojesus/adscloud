@@ -111,7 +111,7 @@
 						<th>Câmera</th>
 						<th>IP</th>
 						<th>Fabricante</th>
-						<th>mais</th>
+
 
 					</thead>
 					{% for camera in camerasScirp %}
@@ -119,45 +119,6 @@
 							<td>{{ camera.nomeCamera }}</td>
 							<td>{{ camera.numeroIp }}</td>
 							<td>{{ camera.fabricanteCamera }}</td>
-							<td>
-									<!-- Button trigger modal -->
-								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-								  Mais
-								</button>
-
-								<!-- Modal -->
-								<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-								  <div class="modal-dialog">
-									<div class="modal-content">
-									  <div class="modal-header">
-										<h5 class="modal-title" id="exampleModalLabel">{{ camera.nomeCamera }}</h5>
-										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-										  <span aria-hidden="true">&times;</span>
-										</button>
-									  </div>
-									  <div class="modal-body">
-										<h6>IP:</h6>
-										  <p>{{ camera.numeroIp }} </p>
-										<h6>Login:</h6>
-										  <p>{{ camera.loginCamera }} </p>
-										<h6>Senha:</h6>
-										  <p>{{ camera.senhaCamera }} </p>
-
-										  <h6>Gravador:</h6>
-										  <p>{{ camera.equipamentoGravacao }} </p>
-
-										  <h6>Fabricante:</h6>
-										  <p>{{ camera.fabricanteCamera }} </p>
-									  </div>
-									  <div class="modal-footer">
-										<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-									  </div>
-									</div>
-								  </div>
-								</div>
-
-
-							</td>
 
 						</tbody>
 					{% endfor %}
