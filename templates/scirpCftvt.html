@@ -1,0 +1,181 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+
+<div class="container-xl">
+	<section>
+		<br>
+		<h3>Iguatemi Ribeirão Preto</h3>
+		<br>
+	</section>
+
+	<section>
+		<div>
+			{% include "scirpCftv.html" %}
+		</div>
+	</section>
+	<section>
+		 <table class="table table-striped">
+					<thead style="background-color: purple;color: white;">
+						<th>Câmera</th>
+						<th>IP</th>
+						<th>Fabricante</th>
+
+
+					</thead>
+					{% for camera in camerasScirp %}
+						<tbody>
+							<td>{{ camera.nomeCamera }}</td>
+							<td>{{ camera.numeroIp }}</td>
+							<td>{{ camera.fabricanteCamera }}</td>
+
+						</tbody>
+					{% endfor %}
+					</table>
+	<section>
+
+
+
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--	<section>-->
+<!--		<ul class="nav nav-tabs" id="myTab" role="tablist">-->
+<!--		  <li class="nav-item" role="presentation">-->
+<!--			<a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true" style="color: purple">Automação</a>-->
+<!--		  </li>-->
+<!--		  <li class="nav-item" role="presentation">-->
+<!--			<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false" style="color: purple">CFTV</a>-->
+<!--		  </li>-->
+<!--		  <li class="nav-item" role="presentation">-->
+<!--			<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false" style="color: purple">Alarme de Incêndio</a>-->
+<!--		  </li>-->
+<!--		</ul>-->
+<!--		<div class="tab-content" id="myTabContent">-->
+<!--			&lt;!&ndash;-->
+<!-- -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--	Inicio dos conteúdos de SAP-->
+<!-- -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--&ndash;&gt;-->
+<!--		  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">-->
+<!--			  <br>-->
+<!--			<section>-->
+<!--				<div>-->
+<!--					<h5>Quadros de Iluminação</h5>-->
+<!--				</div>-->
+<!--					&lt;!&ndash; ********************************************************************************************** &ndash;&gt;-->
+<!--				     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>-->
+<!--				    &lt;!&ndash; ********************************************************************************************** &ndash;&gt;-->
+<!--				<div>-->
+<!--					<canvas id="quantidadeManuais" width="700" height="250"></canvas>-->
+<!--						<script>-->
+<!--							var ctxy = document.getElementById('quantidadeManuais').getContext('2d');-->
+<!--							var myDoughnutChart = new Chart(ctxy, {-->
+<!--								// The type of chart we want to create-->
+<!--								type: 'pie',-->
+
+<!--								// The data for our dataset-->
+<!--								data: {-->
+<!--									labels: ['Online', 'Offline'],-->
+<!--									datasets: [{-->
+<!--										label: 'Equipamentos nos clientes',-->
+<!--										backgroundColor: '',-->
+<!--										borderColor: 'white',-->
+<!--										data: [{{ qnt_online }},{{ qnt_offline }}],-->
+
+<!--										backgroundColor: [-->
+<!--										'rgba(46, 204, 113)',-->
+<!--										'rgba(231, 76, 60)',-->
+<!--										],-->
+<!--									}]-->
+<!--								},-->
+<!--								// Configuration options go here-->
+<!--								options: {}-->
+<!--							});-->
+<!--					</script>-->
+<!--				</div>-->
+
+
+
+<!--			</section>-->
+<!--			  <br>-->
+<!--			  <br>-->
+<!--			<section>-->
+<!--				<div>-->
+<!--					<h5>Relação de Quadros de Iluminação</h5>-->
+<!--				</div>-->
+<!--			</section><br>-->
+<!--			<section>-->
+<!--				<div class="table-responsive-xl">-->
+<!--					  <table class="table table-striped">-->
+<!--					<thead style="background-color: purple;color: white;">-->
+<!--						<th>Quadro</th>-->
+<!--						<th>Gerenciadora</th>-->
+<!--						<th>Status</th>-->
+
+<!--					</thead>-->
+<!--					{% for control in controladoras %}-->
+<!--						<tbody>-->
+<!--							<td>{{ control.quadroSap }}</td>-->
+<!--							<td>{{ control.gerenciadora }}</td>-->
+<!--							<td>{{ control.statusSap }}</td>-->
+
+
+<!--						</tbody>-->
+<!--					{% endfor %}-->
+<!--					</table>-->
+<!--				</div>-->
+
+<!--				</section>-->
+<!--		  </div>-->
+<!--			&lt;!&ndash;-->
+<!-- -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--	Inicio dos conteúdos de CFTV-->
+<!-- -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--&ndash;&gt;-->
+<!--		  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">-->
+<!--			<section>-->
+<!--				<div class="table-responsive-xl">-->
+<!--					  <table class="table table-striped">-->
+<!--					<thead style="background-color: purple;color: white;">-->
+<!--						<th>Câmera</th>-->
+<!--						<th>IP</th>-->
+<!--						<th>Fabricante</th>-->
+
+
+<!--					</thead>-->
+<!--					{% for camera in camerasScirp %}-->
+<!--						<tbody>-->
+<!--							<td>{{ camera.nomeCamera }}</td>-->
+<!--							<td>{{ camera.numeroIp }}</td>-->
+<!--							<td>{{ camera.fabricanteCamera }}</td>-->
+
+<!--						</tbody>-->
+<!--					{% endfor %}-->
+<!--					</table>-->
+<!--				</div>-->
+
+<!--				</section>-->
+
+<!--			  </div>-->
+<!--			&lt;!&ndash;-->
+<!-- -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--	Inicio dos conteúdos de SDAI-->
+<!-- -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--&ndash;&gt;-->
+<!--		  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>-->
+<!--		</div>-->
+<!--	</section>-->

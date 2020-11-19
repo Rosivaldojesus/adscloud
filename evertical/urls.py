@@ -6,7 +6,7 @@ from .views import manuaisFabricantes, manuaisPreventivas, manuaisPreventivasInf
 from .views import senhasPadroes, brBanner
 from .views import wework, weworkView, weworkUpdate
 from .views import dashboard
-from .views import scirp, scirpCftv
+from .views import scirp, scirpCftv, scirpSap
 
 
 urlpatterns = [
@@ -44,6 +44,7 @@ urlpatterns = [
 
 
     path('scirp/', scirp),
-    path('scirpCftv', scirpCftv ),
+    path('scirpCftv/', scirpCftv),
+    path('scirpSap/', scirpSap)
 
 ]

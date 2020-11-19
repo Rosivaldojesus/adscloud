@@ -259,6 +259,15 @@ def scirp(request):
 
                                           })
 
+def scirpSap(request):
+    qnt_online = tbSapScirp.objects.filter(statusSap='Online').count()
+    qnt_offline = tbSapScirp.objects.filter(statusSap='Offline').count()
+    controladoras = tbSapScirp.objects.all()
+    return render(request, 'scirpSap.html', {'controladoras': controladoras,
+                                          'qnt_online': qnt_online,
+                                          'qnt_offline': qnt_offline,
+
+                                          })
 
 def scirpCftv(request):
     camerasScirp = tbCameraIp.objects.filter(cliente=18)

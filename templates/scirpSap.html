@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+
+<div class="container-xl">
+	<section>
+		<br>
+		<h3>Iguatemi Ribeirão Preto</h3>
+		<br>
+	</section>
+	<section>
+		{% include "scirpMenu.html" %}
+	</section>
+	<section>
+		<div>
+			<h5>Quadros de Iluminação</h5>
+		</div>
+		<!-- ********************************************************************************************** -->
+		<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+		<!-- ********************************************************************************************** -->
+		<div>
+			<canvas id="quantidadeManuais" width="700" height="250"></canvas>
+				<script>
+					var ctxy = document.getElementById('quantidadeManuais').getContext('2d');
+					var myDoughnutChart = new Chart(ctxy, {
+					// The type of chart we want to create
+					type: 'pie',
+
+						// The data for our dataset
+							data: {
+								labels: ['Online', 'Offline'],
+								datasets: [{
+									label: 'Equipamentos nos clientes',
+									backgroundColor: '',
+									borderColor: 'white',
+									data: [{{ qnt_online }},{{ qnt_offline }}],
+
+									backgroundColor: [
+									'rgba(46, 204, 113)',
+									'rgba(231, 76, 60)',
+									],
+								}]
+							},
+							// Configuration options go here
+							options: {}
+						});
+				</script>
+			</div>
+
+
+
+			</section>
+			  <br>
+			  <br>
+			<section>
+				<div>
+					<h5>Relação de Quadros de Iluminação</h5>
+				</div>
+			</section><br>
+	<section>
+		<div class="table-responsive-xl">
+		  <table class="table table-striped">
+			<thead style="background-color: purple;color: white;">
+				<th>Quadro</th>
+				<th>Gerenciadora</th>
+				<th>Status</th>
+
+				</thead>
+				{% for control in controladoras %}
+					<tbody>
+						<td>{{ control.quadroSap }}</td>
+						<td>{{ control.gerenciadora }}</td>
+						<td>{{ control.statusSap }}</td>
+					</tbody>
+					{% endfor %}
+		   </table>
+		</div>
+
+	</section>
+
+	</section>
+</div>
+{% endblock %}

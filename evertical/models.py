@@ -202,6 +202,8 @@ class tbSapScirp(models.Model):
     )
     statusSap = models.CharField(max_length=50, choices=STATUS)
     quantidadeControladoras = models.IntegerField(blank=True, null=True)
+    quadroIluminacao = models.CharField(max_length=50, blank=True, null=True)
+    atualizacao = models.DateField(auto_now=False, auto_now_add=False, blank=True)
     observacoesSap = RichTextField(blank=True, null=True)
     class Meta:
         db_table = 'tbSapScirp'
