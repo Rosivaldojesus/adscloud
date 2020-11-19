@@ -74,23 +74,43 @@
 				</tr>
 				</thead>
 				{% for control in controladorasON %}
-					<tbody>
-						<tr class="shadow-lg p-3 mb-5 bg-white rounded ">
-							<td scope="row">{{ control.quadroIluminacao }}</td>
-							<td>{{ control.quadroSap }}</td>
-							<td>{{ control.gerenciadora }}</td>
-							<td>{{ control.statusSap }}</td>
-							<td>{{ control.atualizacao }}</td>
-							<td>
-								<div align="right">
-									<button class="btn" style="background-color: purple; color: white;">
-									   <a href="/scirpSapUpdate/{{ control.id }}">Editar</a>
-								  </button>
-								</div>
-							</td>
-							</tr>
-					</tbody>
-					{% endfor %}
+					{% if statusSap == Online %}
+							<tbody style="background-color: purple;color: green;">
+							<tr class="shadow-lg p-3 mb-5 bg-white rounded " >
+								<td>{{ control.quadroIluminacao }}</td>
+								<td>{{ control.quadroSap }}</td>
+								<td>{{ control.gerenciadora }}</td>
+								<td>{{ control.statusSap }}</td>
+								<td>{{ control.atualizacao }}</td>
+								<td>
+									<div align="right">
+										<button class="btn" style="background-color: purple; color: white;">
+										   <a href="/scirpSapUpdate/{{ control.id }}">Editar</a>
+									  </button>
+									</div>
+								</td>
+								</tr>
+						</tbody>
+
+			  		{% else %}
+			  	<tbody style="background-color: purple;color: green;">
+							<tr class="shadow-lg p-3 mb-5 bg-white rounded " >
+								<td>{{ control.quadroIluminacao }}</td>
+								<td>{{ control.quadroSap }}</td>
+								<td>{{ control.gerenciadora }}</td>
+								<td>{{ control.statusSap }}</td>
+								<td>{{ control.atualizacao }}</td>
+								<td>
+									<div align="right">
+										<button class="btn" style="background-color: purple; color: white;">
+										   <a href="/scirpSapUpdate/{{ control.id }}">Editar</a>
+									  </button>
+									</div>
+								</td>
+								</tr>
+						</tbody>
+			  		{% endif%}
+			  	{% endfor %}
 		   </table>
 		</div>
 	</section>

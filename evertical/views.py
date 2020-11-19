@@ -262,7 +262,7 @@ def scirp(request):
 def scirpSap(request):
     qnt_online = tbSapScirp.objects.filter(statusSap='Online').count()
     qnt_offline = tbSapScirp.objects.filter(statusSap='Offline').count()
-    controladorasON = tbSapScirp.objects.filter(statusSap='Online')
+    controladorasON = tbSapScirp.objects.all()
     controladorasOff = tbSapScirp.objects.filter(statusSap='Offline')
 
     sap = request.GET.get('id')
