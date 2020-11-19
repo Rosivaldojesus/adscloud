@@ -187,7 +187,7 @@ class tbWework(models.Model):
 # ------------------------------------------------------
 
 class tbSapScirp(models.Model):
-    quadroSap = models.CharField(max_length=50, blank=True, null=True)
+    quadroSap = models.CharField(max_length=50, blank=True, null=True, verbose_name="Quadro: ")
     GERENCIADORA = (
         ("BCX_SUP_01", "BCX_SUP_01"),
         ("BCX_SUP_02", "BCX_SUP_02"),
@@ -195,16 +195,16 @@ class tbSapScirp(models.Model):
         ("NET_SUP_01", "NET_SUP_01"),
         ("NET_2SS_01", "NET_2SS_01"),
     )
-    gerenciadora = models.CharField(max_length=255, choices=GERENCIADORA)
+    gerenciadora = models.CharField(max_length=255, choices=GERENCIADORA, verbose_name="Gerenciadora: ")
     STATUS =(
         ("Online","Online"),
         ("Offline","Offline"),
     )
-    statusSap = models.CharField(max_length=50, choices=STATUS)
-    quantidadeControladoras = models.IntegerField(blank=True, null=True)
-    quadroIluminacao = models.CharField(max_length=50, blank=True, null=True)
-    atualizacao = models.DateField(auto_now=False, auto_now_add=False, blank=True)
-    observacoesSap = RichTextField(blank=True, null=True)
+    statusSap = models.CharField(max_length=50, choices=STATUS, verbose_name="Status ON/OFF: ")
+    quantidadeControladoras = models.IntegerField(blank=True, null=True, verbose_name="Quant. Controladoras: ")
+    quadroIluminacao = models.CharField(max_length=50, blank=True, null=True, verbose_name="Quadro de Iluminação: ")
+    atualizacao = models.DateField(auto_now=False, auto_now_add=False, blank=True, verbose_name="Atualização: ")
+    observacoesSap = RichTextField(blank=True, null=True, verbose_name="Observação: ")
     class Meta:
         db_table = 'tbSapScirp'
         verbose_name_plural = 'Quadros SCIRP'

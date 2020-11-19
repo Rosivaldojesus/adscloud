@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% load widget_tweaks %}
+{% load crispy_forms_tags %}
 {% block content %}
 <div class="container-xl">
   <br>
@@ -8,45 +9,45 @@
   <div class="container">
 			<form action="" method="post"> {% csrf_token %}
 
-<!--				{{ form.as_table }}-->
+				{{ form |crispy }}
 
-				<div class="form-row">
-					<div class="form-group col-md-10">
-					  <label for="inputEmail4">WeWork: </label>
-					  {{ form.wework }}
+<!--				<div class="form-row">-->
+<!--					<div class="form-group col-md-10">-->
+<!--					  <label for="inputEmail4">WeWork: </label>-->
+<!--					  {{ form.wework }}-->
 
-					</div>
-				</div>
-				<div class="form-row">
-					<div class="form-group col-md-10">
-					  <label for="inputEmail4">Quant. Andares: </label>
-					  {{ form.weworkQuantAndares }}
-					</div>
-				</div>
-				<div class="form-row">
-					<div class="form-group col-md-4">
-					  <label for="inputEmail4">Andares: </label>
-					  {{ form.weworkAndares }}
-					</div>
-				</div>
-				<div class="form-row">
-					<div class="form-group col-md-4">
-					  <label for="inputEmail4">Condomínio: </label>
-					  {{ form.weworkCondominio }}
-					</div>
-				</div>
-				<div class="form-row">
-					<div class="form-group col-md-4">
-					  <label for="inputEmail4">Sistema SDAI: </label>
-					  {{ form.weworkSdai }}
-					</div>
-				</div>
-				<div class="form-row">
-					<div class="form-group col-md-4">
-					  <label for="inputEmail4">Cidade: </label>
-					  {{ form.clienteCidade }}
-					</div>
-				</div>
+<!--					</div>-->
+<!--				</div>-->
+<!--				<div class="form-row">-->
+<!--					<div class="form-group col-md-10">-->
+<!--					  <label for="inputEmail4">Quant. Andares: </label>-->
+<!--					  {{ form.weworkQuantAndares }}-->
+<!--					</div>-->
+<!--				</div>-->
+<!--				<div class="form-row">-->
+<!--					<div class="form-group col-md-4">-->
+<!--					  <label for="inputEmail4">Andares: </label>-->
+<!--					  {{ form.weworkAndares }}-->
+<!--					</div>-->
+<!--				</div>-->
+<!--				<div class="form-row">-->
+<!--					<div class="form-group col-md-4">-->
+<!--					  <label for="inputEmail4">Condomínio: </label>-->
+<!--					  {{ form.weworkCondominio }}-->
+<!--					</div>-->
+<!--				</div>-->
+<!--				<div class="form-row">-->
+<!--					<div class="form-group col-md-4">-->
+<!--					  <label for="inputEmail4">Sistema SDAI: </label>-->
+<!--					  {{ form.weworkSdai }}-->
+<!--					</div>-->
+<!--				</div>-->
+<!--				<div class="form-row">-->
+<!--					<div class="form-group col-md-4">-->
+<!--					  <label for="inputEmail4">Cidade: </label>-->
+<!--					  {{ form.clienteCidade }}-->
+<!--					</div>-->
+<!--				</div>-->
 
 				<input type="submit" class="btn btn-block btn-primary" value="Atualizar Informações">
 			</form>
