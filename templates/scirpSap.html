@@ -56,7 +56,7 @@
 			  <br>
 			<section>
 				<div>
-					<h5>Relação de Quadros de Iluminação</h5>
+					<h5>Relação dos Quadros de Iluminação</h5>
 				</div>
 			</section><br>
 <!--	Controladoras Online-->
@@ -64,28 +64,31 @@
 		<div class="table-responsive-xl">
 		  <table class="table table-striped">
 			<thead style="background-color: purple;color: white;">
-				<th scope="col">Iluminação</th>
-				<th scope="col">Controladora</th>
-				<th scope="col">Gerenciadora</th>
-				<th scope="col">Status</th>
-				<th scope="col">DataFalha</th>
-				<th scope="col">Opções</th>
-
+				<tr>
+					<th scope="col">Iluminação</th>
+					<th scope="col">Controladora</th>
+					<th scope="col">Gerenciadora</th>
+					<th scope="col">Status</th>
+					<th scope="col">DataFalha</th>
+					<th scope="col">Opções</th>
+				</tr>
 				</thead>
 				{% for control in controladorasON %}
 					<tbody>
-						<td scope="row">{{ control.quadroIluminacao }}</td>
-						<td>{{ control.quadroSap }}</td>
-						<td>{{ control.gerenciadora }}</td>
-						<td>{{ control.statusSap }}</td>
-						<td>{{ control.atualizacao }}</td>
-						<td>
-							<div align="right">
-								<button class="btn" style="background-color: purple; color: white;">
-								   <a href="/scirpSapUpdate/{{ control.id }}">Editar</a>
-							  </button>
-							</div>
-						</td>
+						<tr class="shadow-lg p-3 mb-5 bg-white rounded ">
+							<td scope="row">{{ control.quadroIluminacao }}</td>
+							<td>{{ control.quadroSap }}</td>
+							<td>{{ control.gerenciadora }}</td>
+							<td>{{ control.statusSap }}</td>
+							<td>{{ control.atualizacao }}</td>
+							<td>
+								<div align="right">
+									<button class="btn" style="background-color: purple; color: white;">
+									   <a href="/scirpSapUpdate/{{ control.id }}">Editar</a>
+								  </button>
+								</div>
+							</td>
+							</tr>
 					</tbody>
 					{% endfor %}
 		   </table>
