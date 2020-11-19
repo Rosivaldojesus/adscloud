@@ -58,6 +58,7 @@
 					<h5>Relação de Quadros de Iluminação</h5>
 				</div>
 			</section><br>
+<!--	Controladoras Online-->
 	<section>
 		<div class="table-responsive-xl">
 		  <table class="table table-striped">
@@ -88,7 +89,38 @@
 					{% endfor %}
 		   </table>
 		</div>
+	</section>
+	<!--	Controladoras Online-->
+	<section>
+		<div class="table-responsive-xl">
+		  <table class="table table-striped">
+			<thead style="background-color: purple;color: white;">
+				<th>Iluminação</th>
+				<th>Controladora</th>
+				<th>Gerenciadora</th>
+				<th>Status</th>
+				<th>DataFalha</th>
+				<th>Opções</th>
 
+				</thead>
+				{% for control in controladorasOff %}
+					<tbody>
+						<td>{{ control.quadroIluminacao }}</td>
+						<td>{{ control.quadroSap }}</td>
+						<td>{{ control.gerenciadora }}</td>
+						<td>{{ control.statusSap }}</td>
+						<td>{{ control.atualizacao }}</td>
+						<td>
+							<div align="right">
+								<button class="btn" style="background-color: purple; color: white;">
+								   <a href="/scirpSapUpdate/{{ control.id }}">Editar</a>
+							  </button>
+							</div>
+						</td>
+					</tbody>
+					{% endfor %}
+		   </table>
+		</div>
 	</section>
 
 	</section>
