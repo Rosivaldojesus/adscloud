@@ -264,10 +264,22 @@ def scirpSap(request):
     qnt_offline = tbSapScirp.objects.filter(statusSap='Offline').count()
     controladorasON = tbSapScirp.objects.filter(statusSap='Online')
     controladorasOff = tbSapScirp.objects.filter(statusSap='Offline')
+
+    sap = request.GET.get('id')
+    dados = {}
+    if sap:
+        dados['sap'] = tbSapScirp.objects.get(id=sap)
+
+
+
+
+
+
     return render(request, 'scirpSap.html', {'controladorasON': controladorasON,
                                           'qnt_online': qnt_online,
                                             'qnt_offline': qnt_offline,
                                              'controladorasOff': controladorasOff,
+                                             'dados': dados,
                                           })
 
 def scirpSapUpdate(request, id=None):
