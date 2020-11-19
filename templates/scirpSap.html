@@ -62,16 +62,20 @@
 		<div class="table-responsive-xl">
 		  <table class="table table-striped">
 			<thead style="background-color: purple;color: white;">
-				<th>Quadro</th>
+				<th>Iluminação</th>
+				<th>Controladora</th>
 				<th>Gerenciadora</th>
 				<th>Status</th>
+				<th class="mobile-table">DataFalha</th>
 
 				</thead>
 				{% for control in controladoras %}
 					<tbody>
+						<td>{{ control.quadroIluminacao }}</td>
 						<td>{{ control.quadroSap }}</td>
 						<td>{{ control.gerenciadora }}</td>
 						<td>{{ control.statusSap }}</td>
+						<td class="mobile-table">{{ control.atualizacao }}</td>
 					</tbody>
 					{% endfor %}
 		   </table>
