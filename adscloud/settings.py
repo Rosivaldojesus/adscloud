@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'evertical',
     'ckeditor',
-
+    'crispy_forms',
     'widget_tweaks',
     'usuarios.apps.UsuariosConfig',
 ]
@@ -136,6 +136,7 @@ STATICFILES_DIRS = (
 
 django_heroku.settings(locals())
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 #Configuração de Autenticação
 

@@ -24,6 +24,6 @@ class SapForm(forms.ModelForm):
             'gerenciadora': forms.TextInput(attrs={'class': 'form-control'}),
             'statusSap': forms.TextInput(attrs={'class': 'form-control'}),
             'quantidadeControladoras': forms.TextInput(attrs={'class': 'form-control'}),
-            'quadroIluminacao': forms.Select(attrs={'class': 'form-control'}),
-            'atualizacao': forms.Select(attrs={'class': 'form-control'}),
+            'quadroIluminacao': forms.TextInput(attrs={'class': 'form-control'}),
+            'atualizacao': forms.DateInput(attrs={'class': 'form-control'}),
         }
