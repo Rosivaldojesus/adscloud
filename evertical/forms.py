@@ -1,5 +1,5 @@
 from django import forms
-from .models import tbWework
+from .models import *
 
 
 class weworkForm(forms.ModelForm):
@@ -13,4 +13,17 @@ class weworkForm(forms.ModelForm):
             'weworkCondominio': forms.TextInput(attrs={'class': 'form-control'}),
             'weworkSdai': forms.Select(attrs={'class': 'form-control'}),
             'clienteCidade': forms.Select(attrs={'class': 'form-control'}),
+        }
+
+class SapForm(forms.ModelForm):
+    class Meta:
+        model = tbSapScirp
+        fields = ['quadroSap', 'gerenciadora', 'statusSap','quantidadeControladoras','quadroIluminacao','atualizacao', 'observacoesSap']
+        widgets = {
+            'quadroSap': forms.TextInput(attrs={'class': 'form-control'}),
+            'gerenciadora': forms.TextInput(attrs={'class': 'form-control'}),
+            'statusSap': forms.TextInput(attrs={'class': 'form-control'}),
+            'quantidadeControladoras': forms.TextInput(attrs={'class': 'form-control'}),
+            'quadroIluminacao': forms.Select(attrs={'class': 'form-control'}),
+            'atualizacao': forms.Select(attrs={'class': 'form-control'}),
         }

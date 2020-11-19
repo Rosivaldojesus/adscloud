@@ -66,7 +66,8 @@
 				<th>Controladora</th>
 				<th>Gerenciadora</th>
 				<th>Status</th>
-				<th class="mobile-table">DataFalha</th>
+				<th>DataFalha</th>
+				<th>Opções</th>
 
 				</thead>
 				{% for control in controladoras %}
@@ -75,7 +76,14 @@
 						<td>{{ control.quadroSap }}</td>
 						<td>{{ control.gerenciadora }}</td>
 						<td>{{ control.statusSap }}</td>
-						<td class="mobile-table">{{ control.atualizacao }}</td>
+						<td>{{ control.atualizacao }}</td>
+						<td>
+							<div align="right">
+								<button class="btn" style="background-color: purple; color: white;">
+								   <a href="/scirpSapUpdate/{{ control.id }}">Editar</a>
+							  </button>
+							</div>
+						</td>
 					</tbody>
 					{% endfor %}
 		   </table>

@@ -1,12 +1,5 @@
 from django.urls import path
-from .views import index,  base, model_header, model_footer
-from .views import artigos, artigoVisualizacao
-from .views import clientes, clientesInformacoes, clienteEquipamentos, clienteEquipamentosInformacoes
-from .views import manuaisFabricantes, manuaisPreventivas, manuaisPreventivasInformacoes, manuais, fabricantes
-from .views import senhasPadroes, brBanner
-from .views import wework, weworkView, weworkUpdate
-from .views import dashboard
-from .views import scirp, scirpCftv, scirpSap
+from .views import *
 
 
 urlpatterns = [
@@ -45,6 +38,7 @@ urlpatterns = [
 
     path('scirp/', scirp),
     path('scirpCftv/', scirpCftv),
-    path('scirpSap/', scirpSap)
+    path('scirpSap/', scirpSap),
+    path('scirpSapUpdate/<int:id>', scirpSapUpdate),
 
 ]

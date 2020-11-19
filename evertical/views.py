@@ -6,7 +6,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.db.models import Q
 
 # Controle de Forms
-from .forms import weworkForm
+from .forms import *
 
 #Controle de acesso na Views
 from django.contrib.auth.decorators import login_required, user_passes_test
@@ -268,6 +268,20 @@ def scirpSap(request):
                                           'qnt_offline': qnt_offline,
 
                                           })
+
+def scirpSapUpdate(request, id=None):
+    sap = get_object_or_404(tbSapScirp, id=id)
+    form = SapForm(request.POST or None, instance=sap)
+    if form.is_valid():
+        obj = form.save()
+        obj.save()
+        return redirect('/scirpSap/')
+
+    return render(request,"scirpSapUpdate.html", {'form': form})
+
+
+
+
 
 def scirpCftv(request):
     camerasScirp = tbCameraIp.objects.filter(cliente=18)
