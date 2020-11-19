@@ -266,7 +266,7 @@ def scirpSap(request):
     controladorasOff = tbSapScirp.objects.filter(statusSap='Offline')
     return render(request, 'scirpSap.html', {'controladoras': controladoras,
                                           'qnt_online': qnt_online,
-                                          'qnt_offline': qnt_offline,
+                                            'qnt_offline': qnt_offline,
                                              'controladorasOff': controladorasOff,
                                           })
 
